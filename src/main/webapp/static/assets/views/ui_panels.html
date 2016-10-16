@@ -1,0 +1,401 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.nav.element.PANELS">{{ mainTitle }}</h1>
+			<span class="mainDescription">While not always necessary, sometimes you need to put your DOM in a box. For those situations, try the panel component.
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: PANEL WITH HEADING -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-4">
+			<h5 class="over-title margin-bottom-15">Panel <span class="text-bold">with heading</span></h5>
+			<p class="margin-top-20">
+				By default, all the <code>.panel</code> does is apply some basic border and padding to contain some content.
+			</p>
+			<p class="margin-top-20">
+				Easily add a heading container to your panel with <code>.panel-heading</code>. You may also include any <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> with a <code>.panel-title</code> class to add a pre-styled heading.
+			</p>
+			<p class="margin-top-20">
+				For proper link coloring, be sure to place links in headings within <code>.panel-title</code>.
+			</p>
+			<p>
+				Wrap buttons or secondary text in <code>.panel-footer</code>. Note that panel footers <strong>do not</strong> inherit colors and borders when using contextual variations as they are not meant to be in the foreground.
+			</p>
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-white" id="panel1">
+				<div class="panel-heading">
+					<h4 class="panel-title">Panel Title</h4>
+				</div>
+				<div class="panel-body">
+					<p>
+						Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+					</p>
+					<p>
+						Lorem Ipsum is simsply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</p>
+					<p>
+						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+					</p>
+				</div>
+				<div class="panel-footer">
+					Panel Footer
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PANEL WITH HEADING -->
+<!-- start: PANEL TOOLS -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Panel <span class="text-bold">Tools</span></h5>
+			<p>
+				Add several features to the panel with <code>&ltpaneltool&gt</code> directive.
+			</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-white" id="panel1">
+						<div class="panel-heading">
+							<h4 class="panel-title text-primary">Panel Collapse</h4>
+							<ct-paneltool class="panel-tools" tool-collapse="tool-collapse"></ct-paneltool>
+						</div>
+						<div collapse="panel1" ng-init="panel1=false" class="panel-wrapper">
+							<div class="panel-body">
+								<p>
+									Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-white" id="panel2">
+						<div class="panel-heading">
+							<h4 class="panel-title text-primary">Panel Refresh</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-white" id="panel3">
+						<div class="panel-heading">
+							<h4 class="panel-title text-primary">Panel Remove</h4>
+							<ct-paneltool class="panel-tools" tool-dismiss="tool-dismiss"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-white" id="panel4">
+						<div class="panel-heading">
+							<h4 class="panel-title text-primary">All Tools</h4>
+							<ct-paneltool class="panel-tools" tool-collapse="tool-collapse" tool-refresh="load1" tool-dismiss="tool-dismiss"></ct-paneltool>
+						</div>
+						<div collapse="panel4" ng-init="panel4=false" class="panel-wrapper">
+							<div class="panel-body">
+								<p>
+									Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-white" id="panel5">
+						<div class="panel-heading">
+							<h4 class="panel-title text-primary">Initially closed</h4>
+							<ct-paneltool class="panel-tools" tool-collapse="tool-collapse" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div collapse="panel5" ng-init="panel5=true" class="panel-wrapper">
+							<div class="panel-body">
+								<p>
+									Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+								</p>
+								<p>
+									Lorem Ipsum is simsply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+								</p>
+								<p>
+									It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-white" id="panel6">
+						<div class="panel-heading">
+							<h4 class="panel-title text-primary">Panel Scroll</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<div class="panel-scroll height-180" perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+								<p>
+									Lorem Ipsum is simsply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+								</p>
+								<p>
+									It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								</p>
+								<p>
+									Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+								</p>
+								<p>
+									Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+								</p>
+								<p>
+									Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PANEL TOOLS -->
+<!-- start: COLORED PANELS -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Colored <span class="text-bold">Panels</span></h5>
+			<p>
+				Use any of the available classes to quickly create a styled panel. 
+			</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="panel-title">Panel Primary</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+						<div class="panel-heading">
+							<h4 class="panel-title">Panel Blue</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-green">
+						<div class="panel-heading">
+							<h4 class="panel-title">Panel Green</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-red">
+						<div class="panel-heading">
+							<h4 class="panel-title">Panel Red</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="panel-title">Mixed Colors</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body no-padding partition-dark-primary">
+							<div class="col-md-12 partition-light-primary no-padding">
+								<div class="padding-15">
+									<p>
+										Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+									</p>
+								</div>
+							</div>
+							<div class="col-md-12 no-padding">
+								<div class="padding-15">
+									<p>
+										Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="panel-title">Mixed Colors</h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body no-padding partition-dark-primary">
+							<div class="col-md-6 partition-light-primary no-padding">
+								<div class="padding-15">
+									<p>
+										Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+									</p>
+								</div>
+							</div>
+							<div class="col-md-6 no-padding">
+								<div class="padding-15">
+									<p>
+										Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: COLORED PANELS -->
+<!-- start: PANEL OPTIONS -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Options</span></h5>
+			<p>
+				Additional classes can be added to your panels.
+			</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-white">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title">Header <span class="text-bold">Border</span></h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+							<p>
+								Lorem Ipsum is simsply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							</p>
+							<p>
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-white">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title">Toolbar</h4>
+							<ul class="panel-heading-tabs border-light">
+								<li>
+									<div class="pull-right">
+										<div class="btn-group" dropdown is-open="status.isopen">
+											<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+												Tools <span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li>
+													<a href="#">
+														Action
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Another action
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Something else here
+													</a>
+												</li>
+												<li class="divider"></li>
+												<li>
+													<a href="#">
+														Separated link
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="rate">
+										<i class="fa fa-caret-up text-primary"></i><span class="value">15</span><span class="percentage">%</span>
+									</div>
+								</li>
+								<li class="panel-tools">
+									<ct-paneltool tool-refresh="load1"></ct-paneltool>
+								</li>
+							</ul>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+							<p>
+								Lorem Ipsum is simsply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							</p>
+							<p>
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="panel panel-white no-radius">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title">Squared <span class="text-bold">Panel</span></h4>
+							<ct-paneltool class="panel-tools" tool-refresh="load1"></ct-paneltool>
+						</div>
+						<div class="panel-body">
+							<p>
+								Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+							</p>
+							<p>
+								Lorem Ipsum is simsply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							</p>
+							<p>
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PANEL OPTIONS -->

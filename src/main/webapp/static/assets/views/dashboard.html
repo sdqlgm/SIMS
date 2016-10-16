@@ -1,0 +1,676 @@
+<!-- start: DASHBOARD TITLE -->
+<section id="page-title" class="padding-top-15 padding-bottom-15">
+	<div class="row">
+		<div class="col-sm-7">
+			<h1 class="mainTitle" translate="dashboard.WELCOME" translate-values="{ appName: app.name }">{{ mainTitle }}</h1>
+			<span class="mainDescription">overview &amp; stats </span>
+		</div>
+		<div class="col-sm-5">
+			<!-- start: MINI STATS WITH SPARKLINE -->
+			<!-- /// controller:  'SparklineCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+			<ul class="mini-stats pull-right" ng-controller="SparklineCtrl">
+				<li>
+					<div class="sparkline">
+						<span jq-sparkline ng-model="sales" type="bar" height="20px" bar-color="#D43F3A"></span>
+					</div>
+					<div class="values">
+						<strong class="text-dark">18304</strong>
+						<p class="text-small no-margin">
+							Sales
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="sparkline">
+						<span jq-sparkline ng-model="earnings" type="bar" height="20px" bar-color="#5CB85C"></span>
+					</div>
+					<div class="values">
+						<strong class="text-dark">&#36;3,833</strong>
+						<p class="text-small no-margin">
+							Earnings
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="sparkline">
+						<span jq-sparkline ng-model="referrals" type="bar" height="20px" bar-color="#46B8DA"></span>
+					</div>
+					<div class="values">
+						<strong class="text-dark">&#36;848</strong>
+						<p class="text-small no-margin">
+							Referrals
+						</p>
+					</div>
+				</li>
+			</ul>
+			<!-- end: MINI STATS WITH SPARKLINE -->
+		</div>
+	</div>
+</section>
+<!-- end: DASHBOARD TITLE -->
+<!-- start: FEATURED BOX LINKS -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius text-center">
+				<div class="panel-body">
+					<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+					<h2 class="StepTitle">Manage Users</h2>
+					<p class="text-small">
+						To add users, you need to be signed in as the super user.
+					</p>
+					<p class="links cl-effect-1">
+						<a href>
+							view more
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius text-center">
+				<div class="panel-body">
+					<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+					<h2 class="StepTitle">Manage Orders</h2>
+					<p class="text-small">
+						The Manage Orders tool provides a view of all your orders.
+					</p>
+					<p class="cl-effect-1">
+						<a href>
+							view more
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius text-center">
+				<div class="panel-body">
+					<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+					<h2 class="StepTitle">Manage Database</h2>
+					<p class="text-small">
+						Store, modify, and extract information from your database.
+					</p>
+					<p class="links cl-effect-1">
+						<a href>
+							view more
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FEATURED BOX LINKS -->
+<!-- start: FIRST SECTION -->
+<div class="container-fluid container-fullw padding-bottom-10">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-md-7 col-lg-8">
+					<div class="panel panel-white no-radius" id="visits">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title"> Visits </h4>
+							<ul class="panel-heading-tabs border-light">
+								<li>
+									<div class="pull-right">
+										<div class="btn-group" dropdown is-open="status.isopen">
+											<a dropdown-toggle ng-disabled="disabled" class="padding-10">
+												<i class="ti-more-alt "></i>
+											</a>
+											<ul class="dropdown-menu dropdown-light" role="menu">
+												<li>
+													<a href="#">
+														Action
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Another action
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Something else here
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="rate">
+										<i class="fa fa-caret-up text-primary"></i><span class="value">15</span><span class="percentage">%</span>
+									</div>
+								</li>
+								<li class="panel-tools">
+									<ct-paneltool tool-refresh="load1"></ct-paneltool>
+								</li>
+							</ul>
+						</div>
+						<div collapse="visits" ng-init="visits=false" class="panel-wrapper">
+							<div class="panel-body">
+								<!-- /// controller:  'VisitsCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+								<div ng-controller="VisitsCtrl" class="height-350">
+									<canvas class="tc-chart" tc-chartjs-line chart-options="options" chart-data="data" chart-legend="chart1" width="100%"></canvas>
+									<div class="margin-top-20">
+										<div tc-chartjs-legend chart-legend="chart1" class="inline pull-left"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 col-lg-4">
+					<div class="panel panel-white no-radius">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title"> Acquisition </h4>
+						</div>
+						<div class="panel-body">
+							<h3 class="inline-block no-margin">26</h3> visitors on-line <progressbar value="40" class="progress-xs no-radius" type="success"></progressbar>
+							<div class="row">
+								<div class="col-sm-4">
+									<h4 class="no-margin">15</h4>
+									<progressbar value="80" class="progress-xs no-radius no-margin" type="danger"></progressbar>
+									Direct
+								</div>
+								<div class="col-sm-4">
+									<h4 class="no-margin">7</h4>
+									<progressbar value="60" class="progress-xs no-radius no-margin" type="info"></progressbar>
+									Sites
+								</div>
+								<div class="col-sm-4">
+									<h4 class="no-margin">4</h4>
+									<progressbar value="40" class="progress-xs no-radius no-margin" type="warning"></progressbar>
+									Search
+								</div>
+							</div>
+							<div class="row margin-top-30">
+								<div class="col-xs-4 text-center">
+									<div class="rate">
+										<i class="fa fa-caret-up text-green"></i><span class="value">26</span><span class="percentage">%</span>
+									</div>
+									Mac OS X
+								</div>
+								<div class="col-xs-4 text-center">
+									<div class="rate">
+										<i class="fa fa-caret-up text-green"></i><span class="value">62</span><span class="percentage">%</span>
+									</div>
+									Windows
+								</div>
+								<div class="col-xs-4 text-center">
+									<div class="rate">
+										<i class="fa fa-caret-down text-red"></i><span class="value">12</span><span class="percentage">%</span>
+									</div>
+									Other OS
+								</div>
+							</div>
+							<div class="margin-top-10">
+								<!-- /// controller:  'SalesCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+								<div ng-controller="SalesCtrl" class="height-180">
+									<canvas class="tc-chart" tc-chartjs-bar chart-options="options" chart-data="data" chart-legend="chart2"></canvas>
+									<div tc-chartjs-legend chart-legend="chart2" class="inline pull-left legend-xs"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FIRST SECTION -->
+<!-- start: SECOND SECTION -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="panel panel-white no-radius">
+				<div class="panel-body">
+					<div class="partition-light-grey padding-15 text-center margin-bottom-20">
+						<h4 class="no-margin">Monthly Statistics</h4>
+						<span class="text-light">based on the major browsers</span>
+					</div>
+					<v-accordion>
+						<!-- add expanded attribute to open first section -->
+						<v-pane expanded>
+							<v-pane-header>
+								This Month
+							</v-pane-header>
+							<v-pane-content>
+								<table class="table margin-bottom-0">
+									<tbody>
+										<tr>
+											<td class="center">1</td>
+											<td>Google Chrome</td>
+											<td class="center">4909</td>
+											<td><i class="fa fa-caret-down text-red"></i></td>
+										</tr>
+										<tr>
+											<td class="center">2</td>
+											<td>Mozilla Firefox</td>
+											<td class="center">3857</td>
+											<td><i class="fa fa-caret-up text-green"></i></td>
+										</tr>
+										<tr>
+											<td class="center">3</td>
+											<td>Safari</td>
+											<td class="center">1789</td>
+											<td><i class="fa fa-caret-up text-green"></i></td>
+										</tr>
+										<tr>
+											<td class="center">4</td>
+											<td>Internet Explorer</td>
+											<td class="center">612</td>
+											<td><i class="fa fa-caret-down text-red"></i></td>
+										</tr>
+									</tbody>
+								</table>
+							</v-pane-content>
+						</v-pane>
+						<v-pane>
+							<v-pane-header>
+								Last Month
+							</v-pane-header>
+							<v-pane-content>
+								<table class="table margin-bottom-0">
+									<tbody>
+										<tr>
+											<td class="center">1</td>
+											<td>Google Chrome</td>
+											<td class="center">5228</td>
+											<td><i class="fa fa-caret-up text-green"></i></td>
+										</tr>
+										<tr>
+											<td class="center">2</td>
+											<td>Mozilla Firefox</td>
+											<td class="center">2853</td>
+											<td><i class="fa fa-caret-up text-green"></i></td>
+										</tr>
+										<tr>
+											<td class="center">3</td>
+											<td>Safari</td>
+											<td class="center">1948</td>
+											<td><i class="fa fa-caret-up text-green"></i></td>
+										</tr>
+										<tr>
+											<td class="center">4</td>
+											<td>Internet Explorer</td>
+											<td class="center">456</td>
+											<td><i class="fa fa-caret-down text-red"></i></td>
+										</tr>
+									</tbody>
+								</table>
+							</v-pane-content>
+						</v-pane>
+					</v-accordion>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius">
+				<div class="panel-heading border-bottom">
+					<h4 class="panel-title">New Users</h4>
+				</div>
+				<div class="panel-body">
+					<!-- /// controller:  'OnotherCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+					<div ng-controller="OnotherCtrl">
+						<div class="text-center">
+							<span class="mini-pie"> <canvas class="tc-chart" tc-chartjs-doughnut chart-options="options" chart-data="data" chart-legend="chart3" width="100"></canvas> <span>{{total}}</span> </span>
+							<span class="inline text-large no-wrap">Acquisition</span>
+						</div>
+						<div class="margin-top-20 text-center legend-xs">
+							<div tc-chartjs-legend chart-legend="chart3" class="inline"></div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="clearfix padding-5 space5">
+						<div class="col-xs-4 text-center no-padding">
+							<div class="border-right border-dark">
+								<span class="text-bold block text-extra-large">90%</span>
+								<span class="text-light">Satisfied</span>
+							</div>
+						</div>
+						<div class="col-xs-4 text-center no-padding">
+							<div class="border-right border-dark">
+								<span class="text-bold block text-extra-large">2%</span>
+								<span class="text-light">Unsatisfied</span>
+							</div>
+						</div>
+						<div class="col-xs-4 text-center no-padding">
+							<span class="text-bold block text-extra-large">8%</span>
+							<span class="text-light">NA</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: SECOND SECTION -->
+<!-- start: THIRD SECTION -->
+<div class="container-fluid container-fullw padding-bottom-10">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="panel panel-white no-radius">
+				<div class="panel-heading border-light">
+					<h4 class="panel-title">Users</h4>
+				</div>
+				<div class="panel-body no-padding">
+					<div class="padding-10">
+						<img width="50" height="50" src="assets/images/avatar-1.jpg" class="img-circle pull-left" alt="">
+						<h4 class="no-margin inline-block padding-5">Peter Clark <span class="block text-small text-left">UI Designer</span></h4>
+						<div class="pull-right padding-15">
+							<span class="text-small text-bold text-green"><i class="fa fa-dot-circle-o"></i> on-line</span>
+						</div>
+					</div>
+					<div class="clearfix padding-5 space5">
+						<div class="col-xs-4 text-center no-padding">
+							<div class="border-right border-dark">
+								<a class="text-dark" href="#">
+									<i class="fa fa-heart-o text-red"></i> 250
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-4 text-center no-padding">
+							<div class="border-right border-dark">
+								<a class="text-dark" href="#">
+									<i class="fa fa-bookmark-o text-green"></i> 20
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-4 text-center no-padding">
+							<a class="text-dark" href="#"><i class="fa fa-comment-o text-azure"></i> 544</a>
+						</div>
+					</div>
+					<tabset class="tabbable no-padding no-margin">
+						<tab heading="Followers" class="padding-top-5 padding-left-5">
+							<div class="panel-scroll height-200" perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+								<table class="table no-margin">
+									<tbody>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-1-small.jpg"></td>
+											<td><span class="text-small block text-light">UI Designer</span><span>Peter Clark</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-2-small.jpg"></td>
+											<td><span class="text-small block text-light">Content Designer</span><span>Nicole Bell</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-3-small.jpg"></td>
+											<td><span class="text-small block text-light">Visual Designer</span><span>Steven Thompson</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-5-small.jpg"></td>
+											<td><span class="text-small block text-light">Senior Designer</span><span>Kenneth Ross</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-4-small.jpg"></td>
+											<td><span class="text-small block text-light">Web Editor</span><span>Ella Patterson</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tab>
+						<tab heading="Following" class="padding-top-5">
+							<div class="panel-scroll height-200" perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+								<table class="table no-margin">
+									<tbody>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-3-small.jpg"></td>
+											<td><span class="text-small block text-light">Visual Designer</span><span>Steven Thompson</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-5-small.jpg"></td>
+											<td><span class="text-small block text-light">Senior Designer</span><span>Kenneth Ross</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+										<tr>
+											<td class="center"><img alt="image" class="img-circle" src="assets/images/avatar-4-small.jpg"></td>
+											<td><span class="text-small block text-light">Web Editor</span><span>Ella Patterson</span></td>
+											<td class="center">
+											<div class="cl-effect-13">
+												<a href>
+													view more
+												</a>
+											</div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tab>
+					</tabset>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius">
+				<div class="panel-heading border-bottom">
+					<h4 class="panel-title">Specialization</h4>
+				</div>
+				<div class="panel-body">
+					<!-- /// controller:  'LastCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+					<div ng-controller="LastCtrl">
+						<canvas class="tc-chart" tc-chartjs-radar chart-options="options" chart-data="data" chart-legend="chart4"></canvas>
+						<div class="margin-top-20 padding-bottom-5">
+							<div tc-chartjs-legend chart-legend="chart4" class="inline"></div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="clearfix padding-5 space5">
+						<div class="col-xs-4 text-center no-padding">
+							<div class="border-right border-dark">
+								<span class="text-bold block text-extra-large">90%</span>
+								<span class="text-light">Satisfied</span>
+							</div>
+						</div>
+						<div class="col-xs-4 text-center no-padding">
+							<div class="border-right border-dark">
+								<span class="text-bold block text-extra-large">2%</span>
+								<span class="text-light">Unsatisfied</span>
+							</div>
+						</div>
+						<div class="col-xs-4 text-center no-padding">
+							<span class="text-bold block text-extra-large">8%</span>
+							<span class="text-light">NA</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: THIRD SECTION -->
+<!-- start: FOURTH SECTION -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4">
+			<div class="row">
+				<!-- /// controller:  'SparklineCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+				<div ng-controller="SparklineCtrl">
+					<div class="col-md-12">
+						<div class="panel panel-white no-radius">
+							<div class="panel-body padding-20 text-center">
+								<div class="space10">
+									<h5 class="text-dark no-margin">Today</h5>
+									<h2 class="no-margin"><small>$</small>1,450</h2>
+									<span class="badge badge-success margin-top-10">253 Sales</span>
+								</div>
+								<div class="sparkline space10">
+									<span jq-sparkline ng-model="sales" type="line" width="80%" height="47px" line-color="#8e8e93" highlight-line-color="#c2c2c5" highlight-spot-color="#CE4641" max-spot-color="#5CB85C" min-spot-color="#D9534F" spot-radius="4" fill-color="transparent" resize="true"></span>
+								</div>
+								<span class="text-white-transparent"><i class="fa fa-clock-o"></i> 1 hour ago</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="panel panel-white no-radius">
+							<div class="panel-body padding-20 text-center">
+								<div class="space10">
+									<h5 class="text-dark no-margin">Today</h5>
+									<h2 class="no-margin"><small>$</small>1,450</h2>
+									<span class="badge badge-danger margin-top-10">253 Sales</span>
+								</div>
+								<div class="sparkline space10">
+									<span jq-sparkline ng-model="referrals" type="line" width="80%" height="47px" line-color="#8e8e93" highlight-line-color="#c2c2c5" highlight-spot-color="#CE4641" max-spot-color="#5CB85C" min-spot-color="#D9534F" spot-radius="4" fill-color="transparent" resize="true"></span>
+								</div>
+								<span class="text-white-transparent"><i class="fa fa-clock-o"></i> 1 hour ago</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<div class="panel panel-white no-radius">
+				<div class="panel-heading border-bottom">
+					<h4 class="panel-title">Activities</h4>
+				</div>
+				<div class="panel-body">
+					<ul class="timeline-xs margin-top-15 margin-bottom-15">
+						<li class="timeline-item success">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									2 minutes ago
+								</div>
+								<p>
+									<a class="text-info" href>
+										Steven
+									</a>
+									has completed his account.
+								</p>
+							</div>
+						</li>
+						<li class="timeline-item">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									12:30
+								</div>
+								<p>
+									Staff Meeting
+								</p>
+							</div>
+						</li>
+						<li class="timeline-item danger">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									11:11
+								</div>
+								<p>
+									Completed new layout.
+								</p>
+							</div>
+						</li>
+						<li class="timeline-item info">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									Thu, 12 Jun
+								</div>
+								<p>
+									Contacted
+									<a class="text-info" href>
+										Microsoft
+									</a>
+									for license upgrades.
+								</p>
+							</div>
+						</li>
+						<li class="timeline-item">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									Tue, 10 Jun
+								</div>
+								<p>
+									Started development new site
+								</p>
+							</div>
+						</li>
+						<li class="timeline-item">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									Sun, 11 Apr
+								</div>
+								<p>
+									Lunch with
+									<a class="text-info" href>
+										Nicole
+									</a>
+									.
+								</p>
+							</div>
+						</li>
+						<li class="timeline-item warning">
+							<div class="margin-left-15">
+								<div class="text-muted text-small">
+									Wed, 25 Mar
+								</div>
+								<p>
+									server Maintenance.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<!-- /// controller:  'ChatCtrl' -  localtion: assets/js/controllers/chatCtrl.js /// -->
+			<div ng-controller="ChatCtrl">
+				<div class="panel panel-white no-radius">
+					<div class="panel-heading border-bottom">
+						<h4 class="panel-title">Chat</h4>
+					</div>
+					<div class="panel-body no-padding">
+						<div class="panel-scroll height-330" id="chatBox" perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+							<clip-chat messages="chat" id-self="selfIdUser" id-other="otherIdUser"></clip-chat>
+						</div>
+					</div>
+					<chat-submit submit-function="sendMessage" ng-model="chatMessage" scroll-element="#chatBox"></chat-submit>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FOURTH SECTION -->

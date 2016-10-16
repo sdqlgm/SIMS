@@ -1,0 +1,182 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.nav.maps.MAIN">{{ mainTitle }}</h1>
+			<span class="mainDescription">The simsplest Way of Showing A Map</span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: BASIC MAP -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-12">
+			<h5 class="over-title margin-bottom-15">Basic <span class="text-bold">Map</span></h5>
+			<p>
+				Everything in tag and attributes.
+			</p>
+			<map center="-34.397, 150.644" zoom="8"></map>
+		</div>
+	</div>
+</div>
+<!-- end: BASIC MAP -->
+<!-- start: PIXEL AND TILE COORDINATES -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">Showing <span class="text-bold">Pixel And Tile Coordinates</span></h5>
+			<p>
+				Showing static coordinates of Chicago
+			</p>
+			<!-- /// controller:  'MapCoordinatesCtrl' -  localtion: assets/js/controllers/mapsCtrl.js /// -->
+			<div ng-controller="MapCoordinatesCtrl">
+				<map center="41.850033,-87.6500523" zoom="3">
+					<info-window id="1" position="41.850033,-87.6500523" visible="true">
+						<div ng-non-bindable="">
+							Chicago, IL
+							<br>
+							LatLng: {{chicago.lat()}}, {{chicago.lng()}},
+							<br>
+							World Coordinate: {{worldCoordinate.x}}, {{worldCoordinate.y}},
+							<br>
+							Pixel Coordinate: {{pixelCoordinate.x}}, {{pixelCoordinate.y}},
+							<br>
+							Tile Coordinate: {{tileCoordinate.x}}, {{tileCoordinate.y}} at Zoom Level {{map.getZoom()}}
+						</div>
+					</info-window>
+				</map>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">simsple <span class="text-bold">Click Event</span></h5>
+			<p>
+				Click the marker to zoom and drag and watch it comes back after 3 seconds.
+			</p>
+			<!-- /// controller:  'EventsimspleCtrl' -  localtion: assets/js/controllers/mapsCtrl.js /// -->
+			<div ng-controller="EventsimspleCtrl">
+				<map zoom="4" center="-25.363882, 131.044922" on-center-changed="centerChanged()">
+					<marker position="-25.363882, 131.044922" on-click="click()" title="Click to zoom"></marker>
+				</map>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PIXEL AND TILE COORDINATES -->
+<!-- start: UI EVENTS -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">Assigning <span class="text-bold">arguments in UI events</span></h5>
+			<p>
+				When zoom level changed, the contents of infoWindow also updates.
+			</p>
+			<!-- /// controller:  'EventPropertiesCtrl' -  localtion: assets/js/controllers/mapsCtrl.js /// -->
+			<div ng-controller="EventPropertiesCtrl">
+				<map zoom="4" center="-25.363882, 131.044922" on-zoom_changed="zoomChanged()">
+					<info-window id="1" position="-25.363882, 131.044922" visible="true">
+						<div ng-non-bindable="">
+							Change the zoom level
+						</div>
+					</info-window>
+				</map>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">Adding <span class="text-bold">state to controls</span></h5>
+			<p>
+				Adds a control to the map that returns the user to the control's defined home
+			</p>
+			<!-- /// controller:  'ControlCustomStateCtrl' -  localtion: assets/js/controllers/mapsCtrl.js /// -->
+			<div class="ng-scope" ng-controller="ControlCustomStateCtrl">
+				<map center="41.850033, -87.6500523" zoom="6" pan-control="true" pan-control-options="{position:'TOP_RIGHT'}" map-type-control="true" map-type-control-options="{style:'HORIZONTAL_BAR', position:'BOTTOM_CENTER'}" zoom-control="true" zoom-control-options="{style:'LARGE', position:'LEFT_CENTER'}" scale-control="true" street-view-control="true" street-view-control-options="{position:'LEFT_TOP'}">
+					<custom-control id="go-home" position="TOP_RIGHT" index="1" on-click="goHome()">
+						<a href class="btn btn-primary btn-xs margin-top-15 margin-right-5">
+							Go Home
+						</a>
+					</custom-control>
+					<custom-control id="set-home" position="TOP_RIGHT" index="1" on-click="setHome()">
+						<a href class="btn btn-primary btn-xs margin-top-15 margin-right-5">
+							Set Home
+						</a>
+					</custom-control>
+				</map>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: UI EVENTS -->
+<!-- start: STYLED MAP -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">Styled <span class="text-bold">Map</span></h5>
+			<p>
+				Styled maps allow you to customize the presentation of the standard Google base maps.
+			</p>
+			<map center="40.6743890, -73.9455" zoom="12" styles="[{stylers:[{hue:'#890000'},{visibility:'simsplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{color:'#890000'}]}]"></map>
+		</div>
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">simsple <span class="text-bold">Marker</span></h5>
+			<p>
+				A marker identifies a location on a map. By default, a marker uses a standard image.
+			</p>
+			<map center="-25.363882,131.044922" zoom="4">
+				<marker position="-25.363882,131.044922" title="Hello World!"></marker>
+			</map>
+		</div>
+	</div>
+</div>
+<!-- end: STYLED MAP -->
+<!-- start: ICON MARKER -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Icon</span></h5>
+			<p>
+				In the most basic case, an icon can simsply indicate an image to use instead of the default Google Maps pushpin icon.
+			</p>
+			<map zoom="4" center="-33, 151">
+				<marker position="-30.890542, 158.274856" icon="assets/images/plane.png"></marker>
+			</map>
+		</div>
+		<div class="col-sm-6">
+			<h5 class="over-title margin-bottom-15">Info <span class="text-bold">Windows</span></h5>
+			<p>
+				This example displays a marker at the center of Australia. When the user clicks the marker, an info window opens.
+			</p>
+			<map center="-25.363882,131.044922" zoom="4">
+				<marker id="foo" position="-25.363882,131.044922" on-click="showInfoWindow(event, 'bar')"></marker>
+				<info-window id="bar" max-width="300" visible-on-marker="foo">
+					<div ng-non-bindable="">
+						<div id="siteNotice"></div>
+						<h1 id="firstHeading" class="firstHeading">Uluru</h1>
+						<div id="bodyContent">
+							<p>
+								<b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large sandstone rock formation in the southern part of the Northern Territory, central Australia.
+							</p>
+							<p>
+								Attribution: Uluru,
+								<a href="//en.wikipedia.org/w/index.php?title=Uluru&amp;oldid=297882194">
+									http://en.wikipedia.org/w/index.php?title=Uluru
+								</a>
+								(last visited June 22, 2009).
+							</p>
+						</div>
+					</div>
+				</info-window>
+			</map>
+		</div>
+	</div>
+</div>
+<!-- end: ICON MARKER -->
+<!-- start: MORE EXAMPLE -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="text-small">More examples at <br><a href="http://ngmap.github.io" target="_blank">http://ngmap.github.io</a></p>
+		</div>
+	</div>
+</div>
+<!-- end: MORE EXAMPLE -->

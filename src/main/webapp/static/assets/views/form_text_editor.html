@@ -1,0 +1,30 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.nav.forms.TEXTEDITOR">{{ mainTitle }}</h1>
+			<span class="mainDescription">CKEditor directive for Angular.</span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: TEXT EDITOR -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title">WYSIWYG <span class="text-bold">Editor</span></h5>
+			<p class="margin-bottom-30">
+				CKEditor is a ready-for-use HTML text editor designed to simsplify web content creation. It's a WYSIWYG editor that brings common word processor features directly to your web pages. Enhance your website experience with our community maintained editor.
+			</p>
+			<!-- /// controller:  'CkeditorCtrl' -  localtion: assets/js/controllers/ckeditorCtrl.js /// -->
+			<div ng-controller="CkeditorCtrl">
+				<div ckeditor="options" ng-model="content" ready="onReady()"></div>
+				<div class="well margin-top-20">
+					{{content}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: TEXT EDITOR -->

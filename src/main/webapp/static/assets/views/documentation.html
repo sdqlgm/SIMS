@@ -1,0 +1,1829 @@
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.heading.DOCUMENTATION">{{ mainTitle }}</h1>
+			<span class="mainDescription">Getting started with {{app.name}} is easy. Whether you are a master of Sass, building a new app, or making your existing site responsive, we've got you covered.</span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Getting <span class="text-bold">Started</span></h5>
+			<h2 class="margin-bottom-25 margin-top-25"> What is {{app.name}}? </h2>
+			<p>
+				{{app.name}} is an advanced, responsive dashboard template built with AngularJS, the Superheroic JavaScript MVW Framework. This template is mobile friendly and ready for you to customize it any way you want to use it.
+			</p>
+			<p>
+				AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
+			</p>
+			<p>
+				Need more information?
+				<a href="https://angularjs.org" target="_blank">
+					https://angularjs.org
+				</a>
+			</p>
+			<h2 class="margin-bottom-25 margin-top-25">Template Structure</h2>
+			<p>
+				This template has a fixed structure, including the following elements:
+			</p>
+			<ul>
+				<li>
+					TopBar (Header)
+				</li>
+				<li>
+					Sidebar (with Main Navigation Menu)
+				</li>
+				<li>
+					Sliding Right Sidebar
+				</li>
+				<li>
+					Content
+				</li>
+				<li>
+					Footer
+				</li>
+			</ul>
+			<div class="alert alert-info">
+				The Sidebar becomes a hidden Sliding Sidebar with a screen resolution of at least 992 pixels
+			</div>
+			<h2 class="margin-bottom-25 margin-top-25">Configurations</h2>
+			<p>
+				You need to have a basic knowledge of AngularJS and AngularUI Router to begin your project.
+			</p>
+			<p>
+				<strong>AngularUI Router</strong> is a routing framework for AngularJS, which allows you to organize the parts of your interface into a state machine. Unlike the <code>$route</code> service in the Angular ngRoute module, which is organized around URL routes, UI-Router is organized around states, which may optionally have routes, as well as other behavior, attached.
+			</p>
+			<p>
+				Check the
+				<a href="http://angular-ui.github.io/ui-router" target="_blank">
+					official documentation
+				</a>
+				.
+			</p>
+			<p class="margin-top-30">
+				Also, if you need to build a multi-language project, you need a basic knowledge of angular-translate.
+			</p>
+			<p>
+				<strong>angular-translate</strong> is an AngularJS module that makes your life much easier when it comes to i18n and l10n including lazy loading and pluralization.
+			</p>
+			<p>
+				Check the
+				<a href="http://angular-translate.github.io" target="_blank">
+					official documentation
+				</a>
+				.
+			</p>
+			<hr/>
+			<p>
+				Now back to us.
+			</p>
+			<h4>Global App Scope</h4>
+			<p>
+				The first thing you need to do to customize this template is to define the information concerning your project.
+			</p>
+			<p>
+				<i class="fa fa-folder-open-o text-primary"></i> Open <code>main.js</code> file (assets/js/main.js)
+			</p>
+			<p>
+				Change the Global App Scope according to your needs. More specifically you can set:
+			</p>
+			<ul>
+				<li>
+					<strong>name</strong> (name of your project)
+				</li>
+				<li>
+					<strong>author</strong> (author's name or company name)
+				</li>
+				<li>
+					<strong>description</strong> (brief description of your project)
+				</li>
+				<li>
+					<strong>version</strong> (current version of your project)
+				</li>
+			</ul>
+			<p class="margin-top-20 margin-bottom-20">
+				<mark>
+					Magically you will see significant changes in the template such as the title of the document, the logo, and copyright information in the footer.
+				</mark>
+			</p>
+			<p>
+				Again in Global App Scope, ignoring the values of "year" and "isMobile" that are automatically setup, you can change the default layout as follows:
+			</p>
+			<ul>
+				<li>
+					<strong>isNavbarFixed</strong>: <code>true</code> if you want to initialize the template with fixed header.
+				</li>
+				<li>
+					<strong>isSidebarFixed</strong>: <code>true</code> if you want to initialize the template with fixed sidebar.
+				</li>
+				<li>
+					<strong>isSidebarClosed</strong>: <code>true</code> if you want to initialize the template with closed sidebar.
+				</li>
+				<li>
+					<strong>isFooterFixed</strong>: <code>true</code> if you want to initialize the template with fixed footer.
+				</li>
+				<li>
+					<strong>theme</strong>: indicate the theme chosen for your project
+				</li>
+				<li>
+					<strong>logo</strong> (relative path of the project logo)
+				</li>
+			</ul>
+			<div class="alert alert-info">
+				6 different color schemes are available on {{app.name}}. If you would like to set your favorite scheme, change the value of <code>theme</code> as follow:
+				<ul>
+					<li>
+						theme-1
+					</li>
+					<li>
+						theme-2
+					</li>
+					<li>
+						theme-3
+					</li>
+					<li>
+						theme-4
+					</li>
+					<li>
+						theme-5
+					</li>
+					<li>
+						theme-6
+					</li>
+				</ul>
+			</div>
+			<p>
+				Here is the code to setup
+			</p>
+			<pre>// GLOBAL APP SCOPE
+// set below basic information
+$rootScope.app = {
+	name: 'Clip-Two', // name of your project
+	author: 'ClipTheme', // author's name or company name
+	logo: 'assets/images/logo.png', // relative path of the project logo
+	description: 'Angular Bootstrap Admin Template', // brief description
+	version: '1.0', // current version
+	year: ((new Date()).getFullYear()), // automatic current year (for copyright information)
+	isMobile: (function() { // true if the browser is a mobile device
+		var check = false;
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			check = true;
+		};
+		return check;
+	})(),
+	layout: {
+		isNavbarFixed: true, //true if you want to initialize the template with fixed header
+		isSidebarFixed: true, // true if you want to initialize the template with fixed sidebar
+		isSidebarClosed: false, // true if you want to initialize the template with closed sidebar
+		isFooterFixed: false, // true if you want to initialize the template with fixed footer
+		theme: 'theme-1' // indicate the theme chosen for your project
+	},
+	viewAnimation: 'ng-fadeInUp'
+};</pre>
+			<h4 class="margin-top-20">Configuring Main Navigation Menu</h4>
+			<p>
+				We now begin to customize the main navigation
+			</p>
+			<p>
+				(1) First, <i class="fa fa-folder-open-o text-primary"></i> Open <code>nav.html</code> file (assets/views/partials/nav.html)
+			</p>
+			<p>
+				(2) Find <code>ul</code> with class <code>.main-navigation-menu</code> and change or add a menu item in the list as follows:
+			</p>
+			<pre>&lt;li ui-sref-active="active"&gt;
+	&lt;a ui-sref="app.dashboard"&gt;
+		&lt;div class="item-content"&gt;
+			&lt;div class="item-media"&gt;
+				&lt;i class="ti-home"&gt;&lt;/i&gt;
+			&lt;/div&gt;
+			&lt;div class="item-inner"&gt;
+				&lt;span class="title"&gt; Dashboard &lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/a&gt;
+&lt;/li&gt;</pre>
+			<p>
+				(3) You'll notice we also added some links with <a href="https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-sref" target="_blank"><code>ui-sref</code> directives.</a>
+				In addition to managing state transitions, this directive auto-generates the <code>href</code> attribute of the <code>&lt;a /&gt;</code> element it's attached to, if the corresponding state has a URL.
+			</p>
+			<p>
+				You can also associate an icon to the link. Choose your favorite icon (
+				<a ui-sref="app.ui.icons">
+					fontaweome
+				</a>
+				or
+				<a ui-sref="app.ui.lineicons">
+					themify
+				</a>
+				) and place it inside the div with class <code>.item-media</code>
+			</p>
+			<p>
+				(4) Now <i class="fa fa-folder-open-o text-primary"></i> Open <code>config.router.js</code> file (assets/js/config.router.js) for set up the states.
+			</p>
+			<p>
+				We'll wire it all up with $stateProvider. Set up your states in the module config, as in the following:
+			</p>
+			<pre>$stateProvider.state('app', {
+	url: "/app",
+	templateUrl: "assets/views/app.html",
+	abstract: true
+}).state('app.dashboard', {
+	url: "/dashboard",
+	templateUrl: "assets/views/dashboard.html",
+	title: 'Dashboard'
+})</pre>
+			<p>
+				<strong>
+				<a href="http://plnkr.co/edit/u18KQc?p=preview" target="_blank">
+					Go to Quick Start Plunker for Nested States &amp; Views
+				</a></strong>
+			</p>
+			<h4 class="margin-top-20">Map of dependencies (Modules, Css, jQuery Plugins ecc.)</h4>
+			<p>
+				You can use <code>resolve</code> to provide your controller with content or data that is custom to the state. <code>resolve</code> is an optional map of dependencies which should be injected into the controller.
+			</p>
+			<p>
+				If any of these dependencies are promises, they will be resolved and converted to a value <strong>before</strong> the controller is instantiated and the $stateChangeSuccess event is fired.
+			</p>
+			<p>
+				Moreover, {{app.name}} uses the module <code>oc.lazyLoad</code> for load modules on demand (lazy load) in AngularJS.
+			</p>
+			<p>
+				But small steps.
+			</p>
+			<p>
+				First of all <i class="fa fa-folder-open-o text-primary"></i> Open <code>config.constant.js</code> file (assets/js/config.constant.js)
+			</p>
+			<p>
+				Here we can register a constant service, ie the list of files (css, javascript, etc.) that will serve us as we go forward in the project.
+			</p>
+			<p>
+				Inside the constant <code>JS_REQUIRES</code>, is the object <code>scripts</code> that contains the name of the file or files (eg jQuery plugins) that we want to use in the project.
+			</p>
+			<p>
+				For example, if we want to use the plugin "Modernizr" add the following line of code, specifying the name of the plugin, and an array of associated files:
+			</p>
+			<pre>
+scripts: {
+	'modernizr': ['vendor/modernizr/modernizr.js']
+}</pre>
+			<p>
+				simsilarly, if we want to use an angularJS module, we will indicate in the array <code>modules</code> the name of the module (usually assigned by the author of the library) and its associated files:
+			</p>
+			<pre>modules: [{
+	name: 'toaster',
+	files: ['vendor/toaster/toaster.js', 'vendor/toaster/toaster.css']
+}]</pre>
+			<p>
+				Now we want to dynamically load them on-the-fly at runtime when we change states.
+			</p>
+			<p>
+				To do this, we use the function <code>loadSequence()</code> that generates a resolve object by passing script names previously configured in constant.JS_REQUIRES.
+			</p>
+			<p>
+				In file <code>config.router.js</code> we will match our <code>resolve</code>
+			</p>
+			<pre>$stateProvider.state('app', {
+	url: "/app",
+	templateUrl: "assets/views/app.html",
+	abstract: true 
+}).state('app.dashboard', {
+	url: "/dashboard",
+	templateUrl: "assets/views/dashboard.html",
+	<mark>resolve: loadSequence('modernizr', 'toaster'),</mark>
+	title: 'Dashboard'
+})</pre>
+			<h4 class="margin-top-20">Breadcrumbs</h4>
+			<p>
+				{{app.name}} uses
+				<a href="https://github.com/ncuillery/angular-breadcrumb" target="_blank">
+					Angular-breadcrumb
+				</a>
+				, a module for AngularJS, which generates a breadcrumb for any page of your application. It is strongly based on the ui-router framework and its hierarchical tree of states.
+			</p>
+			<p>
+				Define a <code>ncyBreadcrumb.label</code> property to each states:
+			</p>
+			<pre>$stateProvider.state('app', {
+	url: "/app",
+	templateUrl: "assets/views/app.html",
+	resolve: loadSequence('modernizr', 'toaster'),
+	abstract: true
+}).state('app.dashboard', {
+	url: "/dashboard",
+	templateUrl: "assets/views/dashboard.html",
+	resolve: loadSequence('chartjs', 'tc.chartjs'),
+	title: 'Dashboard',
+	<mark>ncyBreadcrumb: {
+		label: 'My Dashboard'
+	}</mark>
+})</pre>
+			<h4 class="margin-top-20">Translate content</h4>
+			<p>
+				{{app.name}} uses
+				<a href="http://angular-translate.github.io/" target="_blank">
+					angular-translate
+				</a>
+				, an AngularJS module that makes your life much easier when it comes to i18n and l10n including lazy loading and pluralization.
+			</p>
+			<p>
+				The <code>translate</code> directive was used in this project in the following files:
+			</p>
+			<ul>
+				<li>
+					<code>top-navbar.html</code> (assets/views/partials/top-navbar.html)
+				</li>
+				<li>
+					<code>nav.html</code> (assets/views/partials/nav.html)
+				</li>
+				<li>
+					<code>footer.html</code> (assets/views/partials/footer.html)
+				</li>
+				<li>
+					<code>off-sidebar.html</code> (assets/views/partials/off-sidebar.html)
+				</li>
+				<li>
+					in the main title (<code>.mainTitle</code>) of each page
+				</li>
+			</ul>
+			<p>
+				You can find the main configuration in the file <i class="fa fa-folder-open-o text-primary"></i><code>main.js</code> (assets/js/main.js) in the <code>$translateProvider</code> method
+			</p>
+			<p>
+				In our case, we have translated part of the contents of {{app.name}} in three languages (English, German and Italian) creating json files in the folder <i class="fa fa-folder-open-o text-primary"></i><code>i18n</code> (assets/i18n).
+			</p>
+			<p>
+				You can edit these files to your liking, respecting the structure of your project.
+			</p>
+			<p>
+				If you need to add a new language, do the following:
+			</p>
+			<p>
+				(1) First, Create your json file (eg. es_Es.json) and put it in the folder <i class="fa fa-folder-open-o text-primary"></i><code>i18n</code> (assets/i18n)
+			</p>
+			<p>
+				(2) <i class="fa fa-folder-open-o text-primary"></i> Open <code>mainCtrl.js</code> file (assets/js/controllers/mainCtrl.js)
+			</p>
+			<p>
+				(3) Find the scope <code>language</code> and edit the object <code>available</code> in this way:
+			</p>
+			<pre>available: {
+	'en': 'English',
+	'it_IT': 'Italiano',
+	'de_DE': 'Deutsch',
+	<mark>'es_ES': 'Español'</mark>
+},</pre>
+		</div>
+	</div>
+</div>
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">{{app.name}} <span class="text-bold">CSS</span></h5>
+			<h2 class="margin-bottom-25 margin-top-25"> Getting Started With {{app.name}} CSS</h2>
+			<p>
+				{{app.name}} uses
+				<a href="http://getbootstrap.com/css/" target="_blank">
+					Bootstrap CSS
+				</a>
+				that provides global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.
+			</p>
+			<h4 class="margin-top-20">The Grid</h4>
+			<p>
+				See how aspects of the Bootstrap grid system work across multiple devices with a handy table.
+			</p>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th></th>
+							<th> Extra small devices <small>Phones (&lt;768px)</small></th>
+							<th> Small devices <small>Tablets (≥768px)</small></th>
+							<th> Medium devices <small>Desktops (≥992px)</small></th>
+							<th> Large devices <small>Desktops (≥1200px)</small></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" class="text-nowrap">Grid behavior</th>
+							<td>Horizontal at all times</td>
+							<td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Container width</th>
+							<td>None (auto)</td>
+							<td>750px</td>
+							<td>970px</td>
+							<td>1170px</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Class prefix</th>
+							<td><code>.col-xs-</code></td>
+							<td><code>.col-sm-</code></td>
+							<td><code>.col-md-</code></td>
+							<td><code>.col-lg-</code></td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap"># of columns</th>
+							<td colspan="4">12</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Column width</th>
+							<td class="text-muted">Auto</td>
+							<td>~62px</td>
+							<td>~81px</td>
+							<td>~97px</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Gutter width</th>
+							<td colspan="4">30px (15px on each side of a column)</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Nestable</th>
+							<td colspan="4">Yes</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Offsets</th>
+							<td colspan="4">Yes</td>
+						</tr>
+						<tr>
+							<th scope="row" class="text-nowrap">Column ordering</th>
+							<td colspan="4">Yes</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h5 class="margin-top-20">Example: Stacked-to-horizontal</h5>
+			<p>
+				Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any <code>.row</code>.
+			</p>
+			<div class="show-grid clearfix">
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+				<div class="col-md-1">
+					.col-md-1
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-md-8">
+					.col-md-8
+				</div>
+				<div class="col-md-4">
+					.col-md-4
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-md-4">
+					.col-md-4
+				</div>
+				<div class="col-md-4">
+					.col-md-4
+				</div>
+				<div class="col-md-4">
+					.col-md-4
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-md-6">
+					.col-md-6
+				</div>
+				<div class="col-md-6">
+					.col-md-6
+				</div>
+			</div>
+			<h5 class="margin-top-20">Example: Mobile and desktop</h5>
+			<p>
+				Don't want your columns to simsply stack in smaller devices? Use the extra small and medium device grid classes by adding <code>.col-xs-*</code><code>.col-md-*</code> to your columns. See the example below for a better idea of how it all works.
+			</p>
+			<div class="show-grid clearfix">
+				<div class="col-xs-12 col-md-8">
+					.col-xs-12 .col-md-8
+				</div>
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-xs-6">
+					.col-xs-6
+				</div>
+				<div class="col-xs-6">
+					.col-xs-6
+				</div>
+			</div>
+			<h5 class="margin-top-20">Example: Mobile, tablet, desktop</h5>
+			<p>
+				Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.col-sm-*</code> classes.
+			</p>
+			<div class="show-grid clearfix">
+				<div class="col-xs-12 col-sm-6 col-md-8">
+					.col-xs-12 .col-sm-6 .col-md-8
+				</div>
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-xs-6 col-sm-4">
+					.col-xs-6 .col-sm-4
+				</div>
+				<div class="col-xs-6 col-sm-4">
+					.col-xs-6 .col-sm-4
+				</div>
+				<!-- Optional: clear the XS cols if their content doesn't match in height -->
+				<div class="clearfix visible-xs-block"></div>
+				<div class="col-xs-6 col-sm-4">
+					.col-xs-6 .col-sm-4
+				</div>
+			</div>
+			<h5 class="margin-top-20">Offsetting columns</h5>
+			<p>
+				Move columns to the right using <code>.col-md-offset-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.col-md-offset-4</code> moves <code>.col-md-4</code> over four columns.
+			</p>
+			<div class="show-grid clearfix">
+				<div class="col-md-4">
+					.col-md-4
+				</div>
+				<div class="col-md-4 col-md-offset-4">
+					.col-md-4 .col-md-offset-4
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-md-3 col-md-offset-3">
+					.col-md-3 .col-md-offset-3
+				</div>
+				<div class="col-md-3 col-md-offset-3">
+					.col-md-3 .col-md-offset-3
+				</div>
+			</div>
+			<div class="show-grid clearfix">
+				<div class="col-md-6 col-md-offset-3">
+					.col-md-6 .col-md-offset-3
+				</div>
+			</div>
+			<h5 class="margin-top-20">Nesting columns</h5>
+			<p>
+				To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).
+			</p>
+			<div class="show-grid clearfix">
+				<div class="col-sm-9">
+					Level 1: .col-sm-9
+					<div class="row show-grid">
+						<div class="col-xs-8 col-sm-6">
+							Level 2: .col-xs-8 .col-sm-6
+						</div>
+						<div class="col-xs-4 col-sm-6">
+							Level 2: .col-xs-4 .col-sm-6
+						</div>
+					</div>
+				</div>
+			</div>
+			<h4 class="margin-top-20">CSS Utilities</h4>
+			<p>
+				In addition to the default bootstrap css, {{app.name}} includes classes that can help you speed up your development work
+			</p>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Margin</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.no-margin</code></code></code></code></td><td>margin: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-0</code></code></code></td><td>margin-bottom: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-5</code></code></code></td><td>margin-bottom: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-10</code></code></code></td><td>margin-bottom: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-15</code></code></code></td><td>margin-bottom: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-20</code></code></code></td><td>margin-bottom: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-25</code></code></code></td><td>margin-bottom: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-bottom-30</code></code></code></td><td>margin-bottom: 30px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-0</code></code></code></td><td>margin-top: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-5</code></code></code></td><td>margin-top: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-10</code></code></code></td><td>margin-top: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-15</code></code></code></td><td>margin-top: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-20</code></code></code></td><td>margin-top: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-25</code></code></code></td><td>margin-top: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-top-30</code></code></code></td><td>margin-top: 30px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-0</code></code></code></td><td>margin-right: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-5</code></code></code></td><td>margin-right: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-10</code></code></code></td><td>margin-right: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-15</code></code></code></td><td>margin-right: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-20</code></code></code></td><td>margin-right: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-25</code></code></code></td><td>margin-right: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-right-30</code></code></code></td><td>margin-right: 30px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-0</code></code></code></td><td>margin-left: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-5</code></code></code></td><td>margin-left: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-10</code></code></code></td><td>margin-left: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-15</code></code></code></td><td>margin-left: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-20</code></code></code></td><td>margin-left: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-25</code></code></code></td><td>margin-left: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.margin-left-30</code></code></code></td><td>margin-left: 30px </td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Padding</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.no-padding</code></code></code></code></td><td>padding: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-0</code></code></code></td><td>padding-bottom: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-5</code></code></code></td><td>padding-bottom: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-10</code></code></code></td><td>padding-bottom: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-15</code></code></code></td><td>padding-bottom: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-20</code></code></code></td><td>padding-bottom: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-25</code></code></code></td><td>padding-bottom: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-bottom-30</code></code></code></td><td>padding-bottom: 30px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-0</code></code></code></td><td>padding-top: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-5</code></code></code></td><td>padding-top: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-10</code></code></code></td><td>padding-top: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-15</code></code></code></td><td>padding-top: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-20</code></code></code></td><td>padding-top: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-25</code></code></code></td><td>padding-top: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-top-30</code></code></code></td><td>padding-top: 30px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-0</code></code></code></td><td>padding-right: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-5</code></code></code></td><td>padding-right: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-10</code></code></code></td><td>padding-right: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-15</code></code></code></td><td>padding-right: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-20</code></code></code></td><td>padding-right: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-25</code></code></code></td><td>padding-right: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-right-30</code></code></code></td><td>padding-right: 30px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-0</code></code></code></td><td>padding-left: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-5</code></code></code></td><td>padding-left: 5px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-10</code></code></code></td><td>padding-left: 10px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-15</code></code></code></td><td>padding-left: 15px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-20</code></code></code></td><td>padding-left: 20px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-25</code></code></code></td><td>padding-left: 25px </td>
+					</tr>
+					<tr>
+						<td><code>.padding-left-30</code></code></code></td><td>padding-left: 30px </td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Border</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.no-border</code></code></td><td>border: none </td>
+					</tr>
+					<tr>
+						<td><code>.border-right</code></code></td><td>border-right-style: solid;
+						border-right-width: 1px;
+						border-color: inherit;</td>
+					</tr>
+					<tr>
+						<td><code>.border-left</code></code></td><td>border-left-style: solid;
+						border-left-width: 1px;
+						border-color: inherit;</td>
+					</tr>
+					<tr>
+						<td><code>.border-top</code></code></td><td>border-top-style: solid;
+						border-top-width: 1px;
+						border-color: inherit;</td>
+					</tr>
+					<tr>
+						<td><code>.border-bottom</code></code></td><td>border-bottom-style: solid;
+						border-bottom-width: 1px;
+						border-color: inherit;</td>
+					</tr>
+					<tr>
+						<td><code>.border-light</code></code></td><td> border-color: rgba(255, 255, 255, 0.2)  (border with light color)</td>
+					</tr>
+					<tr>
+						<td><code>.border-dark</code></code></td><td>border-color: rgba(0, 0, 0, 0.2); (border with dark color)</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Radius</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.no-radius</code></td><td> border-radius: 0 </td>
+					</tr>
+					<tr>
+						<td><code>.radius-3</code></td><td>border-radius: 3px;</td>
+					</tr>
+					<tr>
+						<td><code>.radius-5</code></td><td>border-radius: 5px;</td>
+					</tr>
+					<tr>
+						<td><code>.radius-10</code></td><td>border-radius: 10px;</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Text</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.text-bold</code></td><td>font-weight: bold;</td>
+					</tr>
+					<tr>
+						<td><code>.text-extra-small</code></td><td>font-size: 11px </td>
+					</tr>
+					<tr>
+						<td><code>.text-small</code></td><td>font-size: 12px </td>
+					</tr>
+					<tr>
+						<td><code>.text-extra-small</code></td><td>font-size: 11px </td>
+					</tr>
+					<tr>
+						<td><code>.text-large </code></td><td>font-size: 16px </td>
+					</tr>
+					<tr>
+						<td><code>.text-extra-large</code></td><td>font-size: 18px </td>
+					</tr>
+					<tr>
+						<td><code>.text-orange</code></td><td>color: #f58a5c;</td>
+					</tr>
+					<tr>
+						<td><code>.text-green</code></td><td>color: #1fbba6;</td>
+					</tr>
+					<tr>
+						<td><code>.text-blue</code></td><td>color: #5f8295;</td>
+					</tr>
+					<tr>
+						<td><code>.text-pink</code></td><td>color: #dd5a82;</td>
+					</tr>
+					<tr>
+						<td><code>.text-purple</code></td><td>color: #dd5a82;</td>
+					</tr>
+					<tr>
+						<td><code>.text-bricky</code></td><td>color: #894550;</td>
+					</tr>
+					<tr>
+						<td><code>.text-yellow</code></td><td>color: #ffb848;</td>
+					</tr>
+					<tr>
+						<td><code>.text-red</code></td><td>color: #e66b6b;</td>
+					</tr>
+					<tr>
+						<td><code>.text-white</code></td><td>color: white;</td>
+					</tr>
+					<tr>
+						<td><code>.text-dark</code></td><td>color: rgba(44, 47, 59, 0.4);</td>
+					</tr>
+					<tr>
+						<td><code>.text-light</code></td><td>color: rgba(255, 255, 255, 0.6);</td>
+					</tr>
+					<tr>
+						<td><code>.text-left</code></td><td>text-align: left;</td>
+					</tr>
+					<tr>
+						<td><code>.text-right</code></td><td>text-align: right;</td>
+					</tr>
+					<tr>
+						<td><code>.text-light</code></td><td>color: rgba(255, 255, 255, 0.6);</td>
+					</tr>
+					<tr>
+						<td><code>.text-left</code></td><td>text-align: left;</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Height</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.height-155</code></td><td>height: 155px </td>
+					</tr>
+					<tr>
+						<td><code>.height-180</code></td><td>height: 180px </td>
+					</tr>
+					<tr>
+						<td><code>.height-200</code></td><td>height: 200px </td>
+					</tr>
+					<tr>
+						<td><code>.height-230</code></td><td>height: 230px </td>
+					</tr>
+					<tr>
+						<td><code>.height-250</code></td><td>height: 250px </td>
+					</tr>
+					<tr>
+						<td><code>.height-270</code></td><td>height: 270px </td>
+					</tr>
+					<tr>
+						<td><code>.height-300</code></td><td>height: 300px </td>
+					</tr>
+					<tr>
+						<td><code>.height-350</code></td><td>height: 350px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-155</code></td><td>min-height: 155px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-180</code></td><td>min-height: 180px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-200</code></td><td>min-height: 200px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-230</code></td><td>min-height: 230px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-250</code></td><td>min-height: 250px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-270</code></td><td>min-height: 270px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-300</code></td><td>min-height: 300px </td>
+					</tr>
+					<tr>
+						<td><code>.min-height-350</code></td><td>min-height: 350px </td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border bg-white b-a">
+				<thead>
+					<tr>
+						<th colspan="2">Generic Classes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.inline</code></td><td>display: inline;</td>
+					</tr>
+					<tr>
+						<td><code>.block</code></td><td>display: block;</td>
+					</tr>
+					<tr>
+						<td><code>.inline-block</code></td><td>display: inline-block;</td>
+					</tr>
+					<tr>
+						<td><code>.no-display</code></td><td>display: none;</td>
+					</tr>
+					<tr>
+						<td><code>.vertical-align-top</code></td><td>vertical-align: top</td>
+					</tr>
+					<tr>
+						<td><code>.vertical-align-middle</code></td><td>vertical-align: middle;</td>
+					</tr>
+					<tr>
+						<td><code>.vertical-align-bottom</code></td><td>vertical-align: bottom;</td>
+					</tr>
+					<tr>
+						<td><code>.float-none</code></td><td>float: none;</td>
+					</tr>
+					<tr>
+						<td><code>.noTransform</code></td><td>-o-transform: none
+						-moz-transform: none
+						-ms-transform: none
+						-webkit-transform: none
+						transform: none </td>
+					</tr>
+				</tbody>
+			</table>
+			<h4 class="margin-top-20">Colors</h4>
+			<p>
+				You can use these colors to customize buttons, text, backgrounds and more.
+			</p>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-primary">
+						Dark Primary
+					</div>
+					<div class="col-xs-4 text-center no-border bg-primary">
+						Primary
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-primary">
+						Light Primary
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-azure">
+						Dark Azure
+					</div>
+					<div class="col-xs-4 text-center no-border bg-azure">
+						Azure
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-azure">
+						Light Azure
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-blue">
+						Dark Blue
+					</div>
+					<div class="col-xs-4 text-center no-border bg-blue">
+						Blue
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-blue">
+						Light Blue
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-purple">
+						Dark Purple
+					</div>
+					<div class="col-xs-4 text-center no-border bg-purple">
+						Purple
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-purple">
+						Light Purple
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-red">
+						Dark Red
+					</div>
+					<div class="col-xs-4 text-center no-border bg-red">
+						Red
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-red">
+						Light Red
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-bricky">
+						Dark Bricky
+					</div>
+					<div class="col-xs-4 text-center no-border bg-bricky">
+						Bricky
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-bricky">
+						Light Bricky
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-orange">
+						Dark Orange
+					</div>
+					<div class="col-xs-4 text-center no-border bg-orange">
+						Orange
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-orange">
+						Light Orange
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-yellow">
+						Dark Yellow
+					</div>
+					<div class="col-xs-4 text-center no-border bg-yellow">
+						Yellow
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-yellow">
+						Light Yellow
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-beige">
+						Dark Beige
+					</div>
+					<div class="col-xs-4 text-center no-border bg-beige">
+						Beige
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-beige">
+						Light Beige
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-green">
+						Dark Green
+					</div>
+					<div class="col-xs-4 text-center no-border bg-green">
+						Green
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-green">
+						Light Green
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-4 text-center no-border bg-dark-grey">
+						Dark Grey
+					</div>
+					<div class="col-xs-4 text-center no-border bg-grey">
+						Grey
+					</div>
+					<div class="col-xs-4 text-center no-border bg-light-grey">
+						Light Grey
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 margin-bottom-15">
+				<div class="show-grid clearfix">
+					<div class="col-xs-3 text-center no-border bg-info">
+						Info
+					</div>
+					<div class="col-xs-3 text-center no-border bg-success">
+						Success
+					</div>
+					<div class="col-xs-3 text-center no-border bg-warning">
+						Warning
+					</div>
+					<div class="col-xs-3 text-center no-border bg-danger">
+						Danger
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Components and <span class="text-bold">Modules</span></h5>
+			<h2 class="margin-bottom-25 margin-top-25"> Core Components </h2>
+			<p>
+				Some component is needed to provide services and directives that implement UI interactions with angular.
+			</p>
+			<h4 class="margin-top-20">AngularUI Router</h4>
+			<p>
+				AngularUI Router is a routing framework for AngularJS, which allows you to organize the
+				parts of your interface into a <em>state machine</em>. Unlike the <code>$route</code> service in the Angular ngRoute module, which is organized around URL
+				routes, UI-Router is organized around <em>states</em>,
+				which may optionally have routes, as well as other behavior, attached.
+			</p>
+			<p>
+				<a href="https://github.com/angular-ui/ui-router" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ngStorage</h4>
+			<p>
+				An AngularJS module that makes Web Storage working in the <em>Angular Way</em>. Contains two services: <code>$localStorage</code> and <code>$sessionStorage</code>.
+			</p>
+			<p>
+				<a href="https://github.com/gsklee/ngStorage" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">UI Bootstrap</h4>
+			<p>
+				Bootstrap components written in pure AngularJS by the AngularUI Team
+			</p>
+			<p>
+				This repository contains a set of <strong>native AngularJS directives</strong> based on
+				Bootstrap's markup and CSS. As a result no dependency on jQuery or Bootstrap's
+				JavaScript is required.
+			</p>
+			<p>
+				<a href="http://angular-ui.github.io/bootstrap/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-translate</h4>
+			<p>
+				angular-translate is an AngularJS module that makes your life much easier when it comes to <strong>i18n</strong> and <strong>l10n</strong> including lazy loading and pluralization.
+			</p>
+			<p>
+				<a href="http://angular-translate.github.io/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ocLazyLoad</h4>
+			<p>
+				Load modules on demand (lazy load) in AngularJS
+			</p>
+			<p>
+				<a href="https://github.com/ocombe/ocLazyLoad" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ocLazyLoad</h4>
+			<p>
+				Load modules on demand (lazy load) in AngularJS
+			</p>
+			<p>
+				<a href="https://github.com/ocombe/ocLazyLoad" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-perfect-scrollbar</h4>
+			<p>
+				This is a small directive to allow the use of <strong>perfect-scrollbar</strong> in angular.
+			</p>
+			<p>
+				<a href="https://github.com/itsdrewmiller/angular-perfect-scrollbar" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Angular Loading Bar</h4>
+			<p>
+				An automatic loading bar using angular interceptors. It works automatically, so simsply include it as a dependency and it will automatically display the progress of your <code>$http</code> requests.
+			</p>
+			<p>
+				<a href="http://chieffancypants.github.io/angular-loading-bar/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-scroll</h4>
+			<p>
+				Scrollspy, animated scrollTo and scroll events for angular.js
+			</p>
+			<p>
+				<a href="https://github.com/oblador/angular-scroll" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-moment</h4>
+			<p>
+				AngularJS directive and filters for Moment.JS.
+			</p>
+			<p>
+				<a href="https://github.com/urish/angular-moment" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h2 class="margin-bottom-25 margin-top-25"> Featured Components </h2>
+			<h4 class="margin-top-20">AngularJS-Toaster</h4>
+			<p>
+				<strong>AngularJS Toaster</strong> is an AngularJS port of the <strong>toastr</strong> non-blocking notification jQuery library.
+			</p>
+			<p>
+				<a href="https://github.com/jirikavi/AngularJS-Toaster" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ngSweetAlert</h4>
+			<p>
+				AngularJS wrapper for
+				<a href="http://tristanedwards.me/sweetalert" target="_blank">
+					SweetAlert
+				</a>
+				jQuery Plugin. Sweet Alert is a beautiful replacement for Javascript's "Alert".
+			</p>
+			<p>
+				<a href="https://github.com/oitozero/ngSweetAlert" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-ladda</h4>
+			<p>
+				An angular directive wrapper for
+				<a href="https://github.com/hakimel/Ladda" target="_blank">
+					Ladda
+				</a>
+				jQuery Plugin.
+			</p>
+			<p>
+				<a href="https://github.com/remotty/angular-ladda" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ng-table</h4>
+			<p>
+				simsple table with sorting and filtering on AngularJS.
+			</p>
+			<p>
+				<a href="https://github.com/esvit/ng-table" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ui-select</h4>
+			<p>
+				AngularJS-native version of Select2 and Selectize.
+			</p>
+			<p>
+				<a href="https://github.com/angular-ui/ui-select" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ui-calendar</h4>
+			<p>
+				A complete AngularJS directive for the Arshaw FullCalendar.
+			</p>
+			<p>
+				<a href="https://github.com/angular-ui/ui-calendar" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">v-accordion</h4>
+			<p>
+				AngularJS multi-level accordion.
+			</p>
+			<p>
+				<a href="https://github.com/LukaszWatroba/v-accordion" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">uiMask</h4>
+			<p>
+				A module from UI.Utils, Swiss-Army-Knife of AngularJS tools (with no external dependencies!).
+			</p>
+			<p>
+				<a href="https://github.com/angular-ui/ui-utils" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ngImgCrop</h4>
+			<p>
+				simsple Image Crop directive for AngularJS. Enables to crop a circle or a square out of an image.
+			</p>
+			<p>
+				<a href="https://github.com/alexk111/ngImgCrop" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Angular File Upload</h4>
+			<p>
+				<strong>Angular File Upload</strong> is a module for the AngularJS framework. Supports drag-n-drop upload, upload progress, validation filters and a file upload queue. It supports native HTML5 uploads, but degrades to a legacy iframe upload method for older browsers. Works with any server side platform which supports standard HTML form uploads.
+			</p>
+			<p>
+				<a href="https://github.com/nervgh/angular-file-upload" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">ng-flow</h4>
+			<p>
+				Flow.js html5 file upload extension on angular.js framework
+			</p>
+			<p>
+				<a href="https://github.com/flowjs/ng-flow" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-ui-switch</h4>
+			<p>
+				This is a simsple iOS 7 style switch directive for AngularJS. You can use this module as you would use the default HTML checkbox input element. This is a super lightweight module and you can completely change the design using just CSS.
+			</p>
+			<p>
+				<a href="https://github.com/xpepermint/angular-ui-switch" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angularjs-google-maps</h4>
+			<p>
+				The simsplest AngularJS Google Maps V3 Directive
+			</p>
+			<p>
+				<a href="https://github.com/allenhwkim/angularjs-google-maps" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">tc-angular-chartjs</h4>
+			<p>
+				Angular Directives for
+				<a target="_blank" href="http://www.chartjs.org/">
+					Chart.js
+				</a>
+				jQuery plugin
+			</p>
+			<p>
+				<a href="http://carlcraig.github.io/tc-angular-chartjs/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Angular Elastic</h4>
+			<p>
+				Elastic (autosize) textareas for AngularJS, without jQuery dependency.
+			</p>
+			<p>
+				<a href="https://github.com/monospaced/angular-elastic" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Angular Truncate</h4>
+			<p>
+				This project is a filter for Angularjs to truncate text strings to a set number of characters or words and
+				add ellipses when needed.
+			</p>
+			<p>
+				<a href="https://github.com/sparkalow/angular-truncate" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-aside</h4>
+			<p>
+				Off canvas side menu to use with ui-bootstrap. Extends ui-bootstrap's $modal provider.
+			</p>
+			<p>
+				<a href="https://github.com/dbtek/angular-aside#live-demo" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-bootstrap-slider</h4>
+			<p>
+				an angular directive for seiyria-bootstrap-slider.
+			</p>
+			<p>
+				<a href="https://github.com/seiyria/angular-bootstrap-slider" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-bootstrap-nav-tree</h4>
+			<p>
+				This is a Tree directive for Angular JS apps that use Bootstrap CSS.
+			</p>
+			<p>
+				<a href="https://github.com/nickperkinslondon/angular-bootstrap-nav-tree" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">angular-perfect-scrollbar</h4>
+			<p>
+				This is a small directive to allow the use of perfect-scrollbar in angular.
+			</p>
+			<p>
+				Use it wherever you want:
+			</p>
+			<pre><code>&lt;perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20"&gt;
+// your content
+&lt;/perfect-scrollbar&gt;
+</code></pre>
+			<p>
+				<a href="https://github.com/itsdrewmiller/angular-perfect-scrollbar" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Angular-xeditable</h4>
+			<p>
+				Angular-xeditable is a bundle of AngularJS directives that allows you to create editable elements in your projects.
+			</p>
+			<p>
+				<a href="vitalets.github.io/angular-xeditable" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Checklist-model</h4>
+			<p>
+				AngularJS directive for list of checkboxes
+			</p>
+			<p>
+				<a href="http://vitalets.github.io/checklist-model" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h2 class="margin-bottom-25 margin-top-25"> Plugins </h2>
+			<h4 class="margin-top-20">Modernizr</h4>
+			<p>
+				<strong>Modernizr</strong> is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.
+			</p>
+			<p>
+				<a href="http://modernizr.com/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Moment.js</h4>
+			<p>
+				Parse, validate, manipulate, and display dates in JavaScript.
+			</p>
+			<p>
+				<a href="http://momentjs.com/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">perfect-scrollbar</h4>
+			<p>
+				Tiny but perfect jQuery scrollbar plugin.
+			</p>
+			<p>
+				<a href="https://github.com/noraesae/perfect-scrollbar" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Ladda</h4>
+			<p>
+				Buttons with built-in loading indicators.
+			</p>
+			<p>
+				<a href="https://github.com/hakimel/Ladda" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">FullCalendar</h4>
+			<p>
+				FullCalendar is a jQuery plugin that provides a full-sized, drag &amp; drop event calendar like the one below.
+				It uses AJAX to fetch events on-the-fly and is easily configured to use your own feed format.
+				It is visually customizable with a rich API.
+			</p>
+			<p>
+				<a href="http://fullcalendar.io/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Sweet Alert</h4>
+			<p>
+				A beautiful replacement for Javascript's "Alert"
+			</p>
+			<p>
+				<a href="http://tristanedwards.me/sweetalert" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Chart.js</h4>
+			<p>
+				simsple, clean and engaging charts for designers and developers
+			</p>
+			<p>
+				<a href="http://www.chartjs.org/" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">jQuery Sparklines</h4>
+			<p>
+				This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript. .
+			</p>
+			<p>
+				<a href="omnipotent.net/jquery.sparkline" target="_blank"><i class="fa fa-book"></i> Official Documentation</a>
+			</p>
+			<hr/>
+		</div>
+	</div>
+</div>
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">AngularJS <span class="text-bold">Directives</span></h5>
+			<h2 class="margin-bottom-25 margin-top-25"> Directives </h2>
+			<p>
+				AngularJS lets you extend HTML with new attributes called Directives.
+			</p>
+			<h4 class="margin-top-20">ctToggle</h4>
+			<p>
+				A simsple but useful and efficient directive to toggle a class to an element.
+			</p>
+			<p>
+				<a ui-sref="app.ui.toggle"><i class="fa fa-external-link"></i> See demo here</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">csSelect</h4>
+			<p>
+				Create a custom CSS3 Select Elements.
+			</p>
+			<p>
+				You must use it as a class.
+			</p>
+			<p>
+				Combined with the class <code>.cs-skin-slide</code> it creates a slide <code>&lt;select&gt;</code>
+			</p>
+			<div class="row margin-bottom-15 margin-top-15">
+				<div class="col-sm-3">
+					<select class="cs-select cs-skin-slide">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+						<option>Option 4</option>
+					</select>
+				</div>
+			</div>
+			<p>
+				Combined with the class <code>.cs-skin-elastic</code> it creates an elastic <code>&lt;select&gt;</code>
+			</p>
+			<div class="row margin-bottom-15 margin-top-15">
+				<div class="col-sm-3">
+					<select class="cs-select cs-skin-elastic">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+						<option>Option 4</option>
+					</select>
+				</div>
+			</div>
+			<hr/>
+			<h4 class="margin-top-20">ctDismiss</h4>
+			<p>
+				A directive used for "close buttons" (eg: alert box). It hides its parent node that has the class with the name of its value.
+			</p>
+			<p>
+				Try the example below:
+			</p>
+			<div class="alert alert-success">
+				<button data-ct-dismiss="alert" class="close">
+					&times;
+				</button>
+				<strong>Close Me!</strong>
+			</div>
+			<hr/>
+			<h4 class="margin-top-20">ctPaneltool</h4>
+			<p>
+				Add several features to panels.
+			</p>
+			<p>
+				<a ui-sref="app.ui.panels"><i class="fa fa-external-link"></i> See demo here</a>
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">offClick</h4>
+			<p>
+				It's like click, but when you don't click on your element.
+			</p>
+			<p>
+				The <code>off-click</code> attribute is the expression or function that will execute each time the user doesn't click on your element (or filter)
+				<br>
+				The optional <code>off-click-filter</code> attribute is a comma separated list of selectors that will not trigger <code>off-click</code> when they are clicked.
+				<br>
+				The optional <code>off-click-if</code> attribute is an expression that will determine if the <code>off-click</code> should trigger or not.
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">compareTo</h4>
+			<p>
+				Password-check directive.
+			</p>
+			<p>
+				You can use the directive inside of markup like so:
+			</p>
+			<pre>&lt;input type="password" name="confirmPassword" 
+ng-model="registration.user.confirmPassword"
+required
+compare-to="registration.user.password" /&gt;</pre>
+			<hr/>
+			<h4 class="margin-top-20">ctFullheight</h4>
+			<p>
+				Make div 100% height of browser window.
+			</p>
+			<p>
+				If you set the <code>ct-fullheight</code> directive with the value
+				<codew>
+					"window"
+				</codew>
+				you will force the element to be the same height of the page, otherwise, if you do not assign any valuethe element will adapt to the document.
+			</p>
+			<p>
+				The optional <code>ct-fullheight-if</code> attribute is an expression that will determine if the <code>ct-fullheight</code> should trigger or not.
+			</p>
+			<p>
+				The optional <code>ct-fullheight-exclusion</code> attribute is a comma separated list of selectors whose height must be excluded from the height of the page.
+			</p>
+			<hr/>
+			<h4 class="margin-top-20">Chat</h4>
+			<p>
+				An AngularJS Chat Directive exclusively for Clip-Two
+			</p>
+			<p>
+				Put the following markup in your template:
+			</p>
+			<pre>&lt;clip-chat messages="chat" id-self="selfIdUser" id-other="otherIdUser"&gt;&lt;/clip-chat&gt;</pre>
+			<p>
+				Insert wherever you want in your html a second directive for the entry messages bar:
+			</p>
+			<pre>&lt;chat-submit submit-function="sendMessage" ng-model="chatMessage" scroll-element="#chatBox"&gt;&lt;/chat-submit&gt;</pre>
+			<p>
+				The <code>scroll-element</code> optional attribute  is used to indicate the html element (eg. with <code>overflow:auto</code>) that encloses the messages and you want to slide down after insertion.
+			</p>
+			<p>
+				Enclose the two directives in a controller:
+			</p>
+			<pre>&lt;div class="col-md-6"&gt;
+	&lt;div ng-controller="ChatCtrl"&gt;
+		&lt;div id="scroller" style="height: 200px; overflow: auto"&gt;
+			&lt;clip-chat messages="chat" id-self="selfIdUser" id-other="otherIdUser"&gt;&lt;/clip-chat&gt;
+		&lt;/div&gt;
+		&lt;chat-submit submit-function="sendMessage" ng-model="chatMessage" scroll-element="#scroller"&gt;&lt;/chat-submit&gt;
+	&lt;div&gt;
+&lt;/div&gt;</pre>
+			<p>
+				and this is an example of a controller:
+			</p>
+			<pre>'use strict';
+/**
+ * controller for Messages
+ */
+app.controller('ChatCtrl', function($scope) {
+
+	$scope.selfIdUser = 50223456;
+	$scope.otherIdUser = 50223457;
+	$scope.setOtherId = function(value) {
+		
+    	$scope.otherIdUser = value;
+	};
+	var exampleDate = new Date().setTime(new Date().getTime() - 240000 * 60);
+
+	$scope.chat = [{
+		"user": "Peter Clark",
+		"avatar": "assets/images/avatar-1.jpg",
+		"to": "Nicole Bell",
+		"date": exampleDate,
+		"content": "Hi, Nicole",
+		"idUser": 50223456,
+		"idOther": 50223457
+	}, {
+		"user": "Peter Clark",
+		"avatar": "assets/images/avatar-1.jpg",
+		"to": "Nicole Bell",
+		"date": new Date(exampleDate).setTime(new Date(exampleDate).getTime() + 1000 * 60),
+		"content": "How are you?",
+		"idUser": 50223456,
+		"idOther": 50223457
+	}];
+
+	
+	$scope.sendMessage = function() {
+		var newMessage = {
+			"user": "Peter Clark",
+			"avatar": "assets/images/avatar-1.jpg",
+			"date": new Date(),
+			"content": $scope.chatMessage,
+			"idUser": $scope.selfIdUser,
+			"idOther": $scope.otherIdUser
+		};
+		 $scope.chat.push(newMessage);
+		 $scope.chatMessage = '';
+		 
+		 
+	};
+});</pre>
+		</div>
+	</div>
+</div>
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Changelog <span class="text-bold">Entries</span></h5>
+			<p>
+				<span class="text-gray"> version </span><span class="text-bold text-dark">1.1</span> - Feb 25, 2015
+			</p>
+			<span class="label label-success">NEW</span>
+			<h4 class="margin-top-10">Chat Directive</h4>
+			<p>
+				An AngularJS Chat Directive exclusively for Clip-Two
+				<br/>
+				<strong>N.b.</strong> for best performance from version 1.0 you must replace style.css (assets/css/style.css) and _chat.scsss (master/sass/partials/_chat.scsss)
+			</p>
+			<p>
+				<a class="dropdown-off-sidebar ng-scope" ng-click="toggle('off-sidebar')"><i class="fa fa-external-link"></i> Open off-sidebar for demo and click a name in the list.</a>
+			</p>
+			<hr/>
+			<span class="label label-success">NEW</span>
+			<h4 class="margin-top-10">RTL version of Clip-Two</h4>
+			<p>
+				RTL is the writing system known as right-to-left (RTL) in which script runs from the right-hand side of a page and concludes on the left-hand side, such as in Arabic, Hebrew and Urdu.
+			</p>
+			<p>
+				<a class="dropdown-off-sidebar ng-scope" href="../RTL/" target="_blank"><i class="fa fa-external-link"></i> View</a>
+			</p>
+			<hr/>
+			<span class="label label-success">NEW</span>
+			<h4 class="margin-top-10">X-Editable Elements</h4>
+			<p>
+				Angular-xeditable is a bundle of AngularJS directives that allows you to create editable elements.
+				Such technique is also known as click-to-edit or edit-in-place.
+			</p>
+			<p>
+				<a ui-sref="app.form.xeditable"><i class="fa fa-external-link"></i> View</a>
+			</p>
+			<hr/>
+			<span class="label label-info">UPGRADE</span>
+			<h4 class="margin-top-10">AngularJS and Related Extras</h4>
+			<p>
+				Version 1.3.13
+			</p>
+			<hr/>
+			<span class="label label-info">UPGRADE</span>
+			<h4 class="margin-top-10">UI Bootstrap</h4>
+			<p>
+				Version 0.12.1
+			</p>
+			<hr/>
+			<span class="label label-warning">FIXED</span>
+			<h4 class="margin-top-10">Mouse wheel scroll problem in IE</h4>
+			<p>From version 1.0 you must replace style.css (assets/css/style.css) and _top-navbar.scsss (master/sass/partials/layout-elements/_top-navbar.scsss)</p>
+			<hr/>
+			<span class="label label-warning">FIXED</span>
+			<h4 class="margin-top-10">Improvements &amp; Minor Bug Fixes</h4>
+		</div>
+	</div>
+</div>

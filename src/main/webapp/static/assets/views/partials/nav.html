@@ -1,0 +1,687 @@
+<!-- start: SEARCH FORM -->
+<div class="search-form">
+	<a class="s-open" href="#">
+		<i class="ti-search"></i>
+	</a>
+	<form class="navbar-form" role="search">
+		<a class="s-remove" href="#" ng-toggle-class="search-open" target=".navbar-form">
+			<i class="ti-close"></i>
+		</a>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="{{ 'sidebar.search.PLACEHOLDER' | translate }}">
+			<button class="btn search-button" type="submit">
+				<i class="ti-search"></i>
+			</button>
+		</div>
+	</form>
+</div>
+<!-- end: SEARCH FORM -->
+<!-- start: MAIN NAVIGATION MENU -->
+<div class="navbar-title">
+	<span translate="sidebar.heading.NAVIGATION">主菜单</span>
+</div>
+<ul class="main-navigation-menu">
+	<li ui-sref-active="active">
+		<a ui-sref="app.dashboard">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-home"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.dashboard.MAIN"> 控制面板 </span>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.ui')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-settings"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.element.MAIN"> UI元素 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.elements">
+					<span class="title" translate="sidebar.nav.element.ELEMENTS"> 页面元素 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.buttons">
+					<span class="title" translate="sidebar.nav.element.BUTTONS"> 按钮 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.links">
+					<span class="title" translate="sidebar.nav.element.LINKS"> 连接 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.icons">
+					<span class="title" translate="sidebar.nav.element.FONTAWESOME"> 字体图标 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.lineicons">
+					<span class="title" translate="sidebar.nav.element.LINEARICONS"> 线性图标 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.modals">
+					<span class="title" translate="sidebar.nav.element.MODALS"> 模态框 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.toggle">
+					<span class="title" translate="sidebar.nav.element.TOGGLE"> Toggle </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.tabs_accordions">
+					<span class="title" translate="sidebar.nav.element.TABS"> Tabs &amp; Accordions </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.panels">
+					<span class="title" translate="sidebar.nav.element.PANELS"> 面板 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.notifications">
+					<span class="title" translate="sidebar.nav.element.NOTIFICATIONS"> 通知 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.treeview">
+					<span class="title" translate="sidebar.nav.element.TREEVIEW"> 树形展示 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.media">
+					<span class="title" translate="sidebar.nav.element.MEDIA"> 媒体对象 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.nestable">
+					<span class="title" translate="sidebar.nav.element.NESTABLE"> Nestable List </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.typography">
+					<span class="title" translate="sidebar.nav.element.TYPOGRAPHY"> 拓扑 </span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.table')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-layout-grid2"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.tables.MAIN"> 表格 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.table.basic">
+					<span class="title" translate="sidebar.nav.tables.BASIC">基本表格</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.table.responsive">
+					<span class="title" translate="sidebar.nav.tables.RESPONSIVE">自适应表格</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.table.data">
+					<span class="title" translate="sidebar.nav.tables.DATA">高级表格</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.form')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-pencil-alt"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.forms.MAIN"> 表单 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.elements">
+					<span class="title" translate="sidebar.nav.forms.ELEMENTS">表单元素</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.xeditable">
+					<span class="title" translate="sidebar.nav.forms.XEDITABLE">Form Elements</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.texteditor">
+					<span class="title" translate="sidebar.nav.forms.TEXTEDITOR">编辑器</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.wizard">
+					<span class="title" translate="sidebar.nav.forms.WIZARD">Form Wizard</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.validation">
+					<span class="title" translate="sidebar.nav.forms.VALIDATION">表单验证</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.cropping">
+					<span class="title" translate="sidebar.nav.forms.CROPPING">图像复制</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.form.upload">
+					<span class="title" translate="sidebar.nav.forms.UPLOAD">多文件上传</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('login')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-user"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.login.MAIN"> 登录 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="login.signin">
+					<span class="title" translate="sidebar.nav.login.LOGIN"> 登录表单 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="login.registration">
+					<span class="title" translate="sidebar.nav.login.REGISTRATION"> 注册表单 </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="login.forgot" translate="sidebar.nav.login.FORGOT">
+					<span class="title"> Forgot Password Form </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="login.lockscreen" translate="sidebar.nav.login.LOCKSCREEN">
+					<span class="title">Lock Screen</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.pages')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-layers-alt"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.pages.MAIN"> Pages </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.pages.user">
+					<span class="title" translate="sidebar.nav.pages.USERPROFILE">User Profile</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.pages.invoice">
+					<span class="title" translate="sidebar.nav.pages.INVOICE">Invoice</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.pages.timeline">
+					<span class="title" translate="sidebar.nav.pages.TIMELINE">Timeline</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.pages.calendar">
+					<span class="title" translate="sidebar.nav.pages.CALENDAR">Calendar</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.pages.messages">
+					<span class="title" translate="sidebar.nav.pages.MESSAGES">Messages</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.pages.blank">
+					<span class="title" translate="sidebar.nav.pages.BLANKPAGE">Blank Page</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.utilities')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-package"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.utilities.MAIN"> Utilities </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.utilities.search">
+					<span class="title" translate="sidebar.nav.utilities.SEARCHRESULT">Search Results</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="error.404">
+					<span class="title" translate="sidebar.nav.utilities.ERROR404">Error 404</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="error.500">
+					<span class="title" translate="sidebar.nav.utilities.ERROR500">Error 500</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.utilities.pricing">
+					<span class="title" translate="sidebar.nav.utilities.PRICING">Pricing Table</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-folder"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.3level.MAIN"> 3 Level Menu </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li>
+				<a href="javascript:;">
+					<span translate="sidebar.nav.3level.Item1.MAIN">Item 1</span> <i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item1.LINK1">
+							Sample Link 1
+						</a>
+					</li>
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item1.LINK2">
+							Sample Link 2
+						</a>
+					</li>
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item1.LINK3">
+							Sample Link 3
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span translate="sidebar.nav.3level.Item2.MAIN">Item 2</span> <i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item2.LINK1">
+							Sample Link 1
+						</a>
+					</li>
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item2.LINK1">
+							Sample Link 2
+						</a>
+					</li>
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item2.LINK1">
+							Sample Link 3
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span translate="sidebar.nav.3level.Item3.MAIN">Item 3</span> <i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item3.LINK1">
+							Sample Link 1
+						</a>
+					</li>
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item3.LINK1">
+							Sample Link 2
+						</a>
+					</li>
+					<li>
+						<a href="#" translate="sidebar.nav.3level.Item3.LINK1">
+							Sample Link 3
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-menu-alt"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.4level.MAIN"> 4 Level Menu </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li>
+				<a href="javascript:;">
+					<span translate="sidebar.nav.4level.Item1.MAIN">Item 1</span> <i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item1.link1.MAIN">Sample Link 1</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link1.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link1.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link1.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item1.link2.MAIN">Sample Link 2</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link2.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link2.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link2.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item1.link3.MAIN">Sample Link 3</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link3.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link3.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item1.link3.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span translate="sidebar.nav.4level.Item2.MAIN">Item 2</span> <i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item2.link1.MAIN">Sample Link 1</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link1.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link1.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link1.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item2.link2.MAIN">Sample Link 2</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link2.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link2.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link2.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item2.link3.MAIN">Sample Link 3</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link3.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link3.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item2.link3.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span translate="sidebar.nav.4level.Item3.MAIN">Item 3</span> <i class="icon-arrow"></i>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item3.link1.MAIN">Sample Link 1</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link1.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link1.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link1.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item3.link2.MAIN">Sample Link 2</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link2.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link2.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link2.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span translate="sidebar.nav.4level.Item3.link3.MAIN">Sample Link 3</span> <i class="icon-arrow"></i>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link3.LINK1">
+									Sample Link 1
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link3.LINK2">
+									Sample Link 2
+								</a>
+							</li>
+							<li>
+								<a href="#" translate="sidebar.nav.4level.Item3.link3.LINK3">
+									Sample Link 3
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li ui-sref-active="active">
+		<a ui-sref="app.maps">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-location-pin"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.maps.MAIN"> Maps </span>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li ui-sref-active="active">
+		<a ui-sref="app.charts">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-pie-chart"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.charts.MAIN"> Charts </span>
+				</div>
+			</div>
+		</a>
+	</li>
+</ul>
+<!-- end: MAIN NAVIGATION MENU -->
+<!-- start: CORE FEATURES -->
+<div class="navbar-title">
+	<span translate="sidebar.heading.FEATURES">Core Features</span>
+</div>
+<ul class="folders">
+	<li>
+		<a ui-sref="app.pages.calendar">
+			<div class="item-content">
+				<div class="item-media">
+					<span class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.pages.CALENDAR"> Calendar </span>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a ui-sref="app.pages.messages">
+			<div class="item-content">
+				<div class="item-media">
+					<span class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i> </span>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.pages.MESSAGES"> Messages </span>
+				</div>
+			</div>
+		</a>
+	</li>
+</ul>
+<!-- end: CORE FEATURES -->
+<!-- start: DOCUMENTATION BUTTON -->
+<div class="wrapper">
+	<a ui-sref="app.documentation" class="button-o">
+		<i class="ti-help"></i>
+		<span translate="sidebar.heading.DOCUMENTATION">Documentation</span>
+	</a>
+</div>
+<!-- end: DOCUMENTATION BUTTON -->

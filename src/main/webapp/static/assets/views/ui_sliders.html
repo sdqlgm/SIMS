@@ -1,0 +1,143 @@
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.nav.element.SLIDERS">{{ mainTitle }}</h1>
+			<span class="mainDescription">This handy slider will allow you to drag a handle to select a specific value from a range.</span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<div ng-controller="SliderCtrl">
+	<div class="container-fluid container-fullw bg-white">
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="over-title margin-bottom-15">Boostrap <span class="text-bold">Sliders</span></h5>
+				<p>
+					Basic example with custom formatter and colored selected region via CSS.
+				</p>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								<div class="slider slider-primary margin-bottom-30 margin-right-30">
+									<slider ng-model="sliders.sliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}"></slider>
+									{{sliders.sliderValue}}
+								</div>
+								<div class="slider slider-red margin-bottom-30  margin-right-30">
+									<slider ng-model="sliders.secondSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}"></slider>
+									{{sliders.secondSliderValue}}
+								</div>
+								<div class="slider slider-blue margin-bottom-30 margin-right-30">
+									<slider ng-model="sliders.thirdSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}"></slider>
+									{{sliders.thirdSliderValue}}
+								</div>
+								<div class="slider slider-green margin-bottom-30 margin-right-30">
+									<slider ng-model="sliders.fourthSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}"></slider>
+									{{sliders.fourthSliderValue}}
+								</div>
+								<div class="slider slider-orange margin-bottom-30 margin-right-30">
+									<slider ng-model="sliders.fifthSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}"></slider>
+									{{sliders.fifthSliderValue}}
+								</div>
+								<div class="slider slider-purple margin-bottom-30 margin-right-30">
+									<slider ng-model="sliders.sixthSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}"></slider>
+									{{sliders.sixthSliderValue}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="panel panel-transparent">
+							<div class="panel-body">
+								<h3 class="text-primary">Slider component with different options</h3>
+								<ul>
+									<li>
+										vertical or horizontal orientation
+									</li>
+									<li>
+										minimum and maxim values
+									</li>
+									<li>
+										step incrementor
+									</li>
+									<li>
+										range selector
+									</li>
+									<li>
+										touch capabale
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid container-fullw">
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="over-title margin-bottom-15"><span class="text-bold">Options</span></h5>
+				<p>
+					Options for the bootstrap-slider component.
+				</p>
+				<div class="row margin-top-30">
+					<div class="col-md-6 col-sm-6 margin-bottom-30">
+						<h5>Vertical Sliders</h5>
+						<p class="text-small">Vertical selector, options specified via data attribute <code>orientation</code>.</p>
+						<div class="panel panel-transparent">
+							<div class="panel-body">
+								<div class="slider slider-primary margin-right-15 margin-bottom-20">
+									<slider ng-model="sliders.verticalSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}" orientation="vertical"></slider>
+								</div>
+								<div class="slider slider-red margin-right-15 margin-bottom-20">
+									<slider ng-model="sliders.secondVerticalSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}" orientation="vertical"></slider>
+								</div>
+								<div class="slider slider-blue margin-right-15 margin-bottom-20">
+									<slider ng-model="sliders.thirdVerticalSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}" orientation="vertical"></slider>
+								</div>
+								<div class="slider slider-green margin-right-15 margin-bottom-20">
+									<slider ng-model="sliders.fourthVerticalSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}" orientation="vertical"></slider>
+								</div>
+								<div class="slider slider-orange margin-right-15 margin-bottom-20">
+									<slider ng-model="sliders.fifthVerticalSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}" orientation="vertical"></slider>
+								</div>
+								<div class="slider slider-purple margin-right-15 margin-bottom-20">
+									<slider ng-model="sliders.sixthVerticalSliderValue" min="{{testOptions.min}}" step="{{testOptions.step}}" max="{{testOptions.max}}" value="{{testOptions.value}}" orientation="vertical"></slider>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 margin-bottom-30">
+						<h5>Range Sliders</h5>
+						<p class="text-small">Range selector, options specified via data attribute.</p>
+						<div class="panel panel-transparent margin-bottom-0">
+							<div class="panel-body">
+								<div class="slider slider-yellow margin-bottom-20">
+									<span slider ng-model="sliders.rangeSliderValue" min="{{testOptions.min}}" max="{{testOptions.max}}" range="true" slider-id="rangeSlider1"></span>
+									{{sliders.rangeSliderValue}}
+								</div>
+								<br>
+								<div class="slider slider-red">
+									<span ng-model="sliders.rangeSliderValue2" slider min="{{testOptions.min}}" max="{{testOptions.max}}" range="true" value="[55,70]" slider-id="rangeSlider2"></span>
+									{{sliders.rangeSliderValue2}}
+								</div>
+							</div>
+						</div>
+						<h5>Status</h5>
+						<p class="text-small">Show the status of slider.</p>
+						<div class="panel panel-transparent">
+							<div class="panel-body">
+								<div class="slider slider-green">
+									<span slider ng-model="sliders.statusSliderValue" on-start-slide="status='started'" on-slide="status='sliding'" on-stop-slide="status='stopped'"></span>
+									{{sliders.statusSliderValue}}
+									status: {{status}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

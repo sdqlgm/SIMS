@@ -1,0 +1,1008 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.nav.element.ELEMENTS">{{ mainTitle }}</h1>
+			<span class="mainDescription">Over a dozen reusable components built to provide popovers, media objects, navigation, tooltips and much more. </span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: LIST GROUP -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">List <span class="text-bold">Group</span></h5>
+			<p>
+				List groups are a flexible and powerful component for displaying not only simsple lists of elements, but complex ones with custom content.
+			</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Basic example with Badges
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								The most basic list group is simsply an unordered list with list items, and the proper classes. Add the badges component to any list group item and it will automatically be positioned on the right.
+							</p>
+							<ul class="list-group">
+								<li class="list-group-item">
+									<span class="badge">14</span>
+									Cras justo odio
+								</li>
+								<li class="list-group-item">
+									<span class="badge">2</span>
+									Dapibus ac facilisis in
+								</li>
+								<li class="list-group-item">
+									<span class="badge">1</span>
+									Morbi leo risus
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Linked items
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								Linkify list group items by using anchor tags instead of list items (that also means a parent <code>&lt;div&gt;</code> instead of an <code>&lt;ul&gt;</code>). No need for individual parents around each element.
+							</p>
+							<div class="list-group">
+								<a class="list-group-item active" href="#">
+									Cras justo odio
+								</a>
+								<a class="list-group-item" href="#">
+									Dapibus ac facilisis in
+								</a>
+								<a class="list-group-item" href="#">
+									Porta ac consectetur ac
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Contextual classes
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								Use contextual classes to style list items, default or linked. Also includes <code>.active</code> state.
+							</p>
+							<div class="list-group">
+								<a class="list-group-item list-group-item-success" href="#">
+									Dapibus ac facilisis in
+								</a>
+								<a class="list-group-item list-group-item-info" href="#">
+									Cras sit amet nibh libero
+								</a>
+								<a class="list-group-item list-group-item-warning" href="#">
+									Porta ac consectetur ac
+								</a>
+								<a class="list-group-item list-group-item-danger" href="#">
+									Vestibulum at eros
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Custom content
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								Add nearly any HTML within, even for linked list groups like the one below.
+							</p>
+							<div class="list-group">
+								<a class="list-group-item active" href="#">
+									<h5 class="list-group-item-heading">List group item heading</h5>
+									<p class="list-group-item-text">
+										Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+									</p>
+								</a>
+								<a class="list-group-item" href="#">
+									<h5 class="list-group-item-heading">List group item heading</h5>
+									<p class="list-group-item-text">
+										Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+									</p>
+								</a>
+								<a class="list-group-item" href="#">
+									<h5 class="list-group-item-heading">List group item heading</h5>
+									<p class="list-group-item-text">
+										Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+									</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: LIST GROUP -->
+<!-- start: TOOLTIPS -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Tooltips</span></h5>
+			<p>
+				A lightweight, extensible directive for fancy tooltip creation. The tooltip directive supports multiple placements, optional transition animation, and more.
+			</p>
+			<!-- /// controller:  'TooltipDemoCtrl' -  localtion: assets/js/controllers/bootstrapCtrl.js /// -->
+			<div ng-controller="TooltipDemoCtrl">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Static Tooltip
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									Four options are available: top, right, bottom, and left aligned.
+								</p>
+								<div class="static-tooltip">
+									<div role="tooltip" class="tooltip left">
+										<div class="tooltip-arrow"></div>
+										<div class="tooltip-inner">
+											Tooltip on the left
+										</div>
+									</div>
+									<div role="tooltip" class="tooltip top">
+										<div class="tooltip-arrow"></div>
+										<div class="tooltip-inner">
+											Tooltip on the top
+										</div>
+									</div>
+									<div role="tooltip" class="tooltip bottom">
+										<div class="tooltip-arrow"></div>
+										<div class="tooltip-inner">
+											Tooltip on the bottom
+										</div>
+									</div>
+									<div role="tooltip" class="tooltip right">
+										<div class="tooltip-arrow"></div>
+										<div class="tooltip-inner">
+											Tooltip on the right
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Dynamic Tooltip
+								</div>
+							</div>
+							<div class="panel-body">
+								<span class="text-extra-large margin-bottom-10 block">
+									<a href="#" tooltip="{{dynamicTooltip}}">
+										{{dynamicTooltipText}}
+									</a> </span>
+								<div class="form-group">
+									<label>
+										Dynamic Tooltip Text
+									</label>
+									<input type="text" ng-model="dynamicTooltipText" class="form-control">
+								</div>
+								<div class="form-group">
+									<label>
+										Dynamic Tooltip Popup Text
+									</label>
+									<input type="text" ng-model="dynamicTooltip" class="form-control">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								<p class="text-small">
+									Hover over the links below to see tooltips:
+								</p>
+								<p>
+									Pellentesque
+									<a href="#" tooltip="{{dynamicTooltip}}">
+										{{dynamicTooltipText}}
+									</a>
+									,
+									sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in
+									aliquam. Tincidunt lobortis feugiat vivamus at
+									<a href="#" tooltip-placement="left" tooltip="On the Left!">
+										left
+									</a>
+									eget
+									arcu dictum varius duis at consectetur lorem. Vitae elementum curabitur
+									<a href="#" tooltip-placement="right" tooltip="On the Right!">
+										right
+									</a>
+									nunc sed velit dignissims sodales ut eu sem integer vitae. Turpis egestas
+									<a href="#" tooltip-placement="bottom" tooltip="On the Bottom!">
+										bottom
+									</a>
+									pharetra convallis posuere morbi leo urna,
+									<a href="#" tooltip-animation="false" tooltip="I don't fade. :-(">
+										fading
+									</a>
+									at elementum eu, facilisis sed odio morbi quis commodo odio. In cursus
+									<a href="#" tooltip-popup-delay='1000' tooltip='appears with delay'>
+										delayed
+									</a>
+									turpis massa tincidunt dui ut.
+								</p>
+								<p>
+									I can even contain HTML.
+									<a href="#" tooltip-html-unsafe="{{htmlTooltip}}">
+										Check me out!
+									</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: TOOLTIPS -->
+<!-- start: POPOVERS -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Popovers</span></h5>
+			<p>
+				A lightweight, extensible directive for add small overlays of content, like those on the iPad, to any element for housing secondary information..
+			</p>
+			<!-- /// controller:  'PopoverDemoCtrl' -  localtion: assets/js/controllers/bootstrapCtrl.js /// -->
+			<div ng-controller="PopoverDemoCtrl">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Static Popover
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									Four options are available: top, right, bottom, and left aligned.
+								</p>
+								<label>
+									Popover Type
+								</label>
+								<div class="radio clip-radio radio-primary">
+									<input type="radio" ng-model="popoverType" name="popoverType" id="top" value="top">
+									<label for="top">
+										Popover top
+									</label>
+								</div>
+								<div class="radio clip-radio radio-primary">
+									<input type="radio" ng-model="popoverType" name="popoverType" id="left" value="left">
+									<label for="left">
+										Popover left
+									</label>
+								</div>
+								<div class="radio clip-radio radio-primary">
+									<input type="radio" ng-model="popoverType" name="popoverType" id="right" value="right">
+									<label for="right">
+										Popover right
+									</label>
+								</div>
+								<div class="radio clip-radio radio-primary">
+									<input type="radio" ng-model="popoverType" name="popoverType" id="bottom" value="bottom">
+									<label for="bottom">
+										Popover bottom
+									</label>
+								</div>
+								<div class="static-popover">
+									<div class="popover" ng-class="popoverType">
+										<div class="arrow"></div>
+										<h3 class="popover-title">Popover {{popoverType}}</h3>
+										<div class="popover-content">
+											<p>
+												Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+											</p>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Dynamic Popover
+								</div>
+							</div>
+							<div class="panel-body">
+								<span class="text-extra-large margin-bottom-10 block">
+									<button popover="{{dynamicPopover}}" popover-placement="{{popoverType}}" popover-title="{{dynamicPopoverTitle}}" class="btn btn-o btn-primary">
+										Show dynamic Popover
+									</button> </span>
+								<div class="form-group">
+									<label>
+										Popover Title:
+									</label>
+									<input type="text" ng-model="dynamicPopoverTitle" class="form-control">
+								</div>
+								<div class="form-group">
+									<label>
+										Popover Text:
+									</label>
+									<input type="text" ng-model="dynamicPopover" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Others
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									The popover directives provides several optional attributes to control how it will display
+								</p>
+								<p>
+									<button popover="I appeared on mouse enter!" popover-title="The title." popover-trigger="mouseenter" class="btn btn-o btn-primary btn-wide">
+										Mouseenter
+									</button>
+									<button Popover-animation="true" popover="I fade in and out!" popover-title="The title." class="btn btn-o btn-primary btn-wide">
+										fading
+									</button>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: POPOVERS -->
+<!-- start: PROGRESS BARS -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title">Progress <span class="text-bold">Bars</span></h5>
+			<p class="margin-bottom-30">
+				Provide up-to-date feedback on the progress of a workflow or action with simsple yet flexible progress bars.
+			</p>
+			<div class="alert alert-block alert-warning">
+				Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported in IE7-9 or older versions of Firefox. Versions earlier than Internet Explorer 10 and Opera 12 do not support animations.
+			</div>
+			<!-- /// controller:  'ProgressDemoCtrl' -  localtion: assets/js/controllers/bootstrapCtrl.js /// -->
+			<div ng-controller="ProgressDemoCtrl">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Static Progress Bars
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									Progress bars use some of the same button and alert classes for consistent styles.
+								</p>
+								<div class="row">
+									<div class="col-sm-4">
+										<p>
+											<h5>Basic</h5>
+										</p>
+										<progressbar value="60" class="progress-xs"></progressbar>
+										<progressbar value="40" class="progress-xs" type="success"></progressbar>
+										<progressbar value="20" class="progress-xs" type="info"></progressbar>
+										<progressbar value="60" class="progress-xs" type="warning"></progressbar>
+										<progressbar value="80" class="progress-xs" type="danger"></progressbar>
+									</div>
+									<div class="col-sm-4">
+										<p>
+											<h5>Striped</h5>
+										</p>
+										<progressbar value="60" class="progress-striped progress-xs"></progressbar>
+										<progressbar value="40" class="progress-striped progress-xs" type="success"></progressbar>
+										<progressbar value="20" class="progress-striped progress-xs" type="info"></progressbar>
+										<progressbar value="60" class="progress-striped progress-xs" type="warning"></progressbar>
+										<progressbar value="80" class="progress-striped progress-xs" type="danger"></progressbar>
+									</div>
+									<div class="col-sm-4">
+										<p>
+											<h5>Animated</h5>
+										</p>
+										<progressbar value="60" class="progress-striped progress-xs active"></progressbar>
+										<progressbar value="40" class="progress-striped progress-xs active" type="success"></progressbar>
+										<progressbar value="20" class="progress-striped progress-xs active" type="info"></progressbar>
+										<progressbar value="60" class="progress-striped progress-xs active" type="warning"></progressbar>
+										<progressbar value="80" class="progress-striped progress-xs active" type="danger"></progressbar>
+									</div>
+									<div class="col-sm-6">
+										<p>
+											<h5>Sizes</h5>
+										</p>
+										<progressbar value="60" class="progress-xs"></progressbar>
+										<progressbar value="40" class="progress-sm"></progressbar>
+										<progressbar value="20"></progressbar>
+									</div>
+									<div class="col-sm-6">
+										<p>
+											<h5>With label</h5>
+										</p>
+										<progressbar value="22" type="warning">
+											22%
+										</progressbar>
+										<progressbar  max="200" value="166" type="danger">
+											166 / 200
+										</progressbar>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Dynamic Progress Bars
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									A progress bar directive that is focused on providing feedback on the progress of a workflow or action.
+									It supports multiple (stacked) bars into the same <code>&lt;progress&gt;</code> element or a single <code>&lt;progressbar&gt;</code> element with optional <code>max</code> attribute and transition animations.
+								</p>
+								<div class="row">
+									<div class="col-sm-6">
+										<p>
+											<h5>Dynamic</h5>
+										</p>
+										<button class="btn btn-primary btn-o block margin-bottom-10" type="button" ng-click="random()">
+											Randomize
+										</button>
+										<p>
+											max value
+										</p>
+										<progressbar max="max" value="dynamic">
+											<span>{{dynamic}} / {{max}}</span>
+										</progressbar>
+										<p>
+											No animation
+										</p>
+										<progressbar animate="false" value="dynamic" type="success">
+											<b>{{dynamic}}%</b>
+										</progressbar>
+										<p>
+											Object (changes type based on value)
+										</p>
+										<progressbar class="progress-striped active" value="dynamic" type="{{type}}">
+											{{type}} <span ng-show="showWarning">! Watch out!</span>
+										</progressbar>
+									</div>
+									<div class="col-sm-6">
+										<p>
+											<h5>Stacked</h5>
+										</p>
+										<button class="btn btn-primary btn-o block margin-bottom-10" type="button" ng-click="randomStacked()">
+											Randomize
+										</button>
+										<p class="text-small">
+											Place multiple bars into the same .progress to stack them.
+										</p>
+										<progress>
+											<bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}">
+												<span ng-hide="bar.value < 5">{{bar.value}}%</span>
+											</bar>
+										</progress>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PROGRESS BARS -->
+<!-- start: PAGINATION -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Pagination</span></h5>
+			<p>
+				Provide pagination links for your site or app with the multi-page pagination component, or the simspler pager alternative.
+				simsple pagination, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.
+			</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Default Pagination
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								simsple pagination, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.
+							</p>
+							<div>
+								<ul class="pagination margin-bottom-10">
+									<li>
+										<a href="#">
+											<i class="ti-arrow-left"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											1
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											2
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											3
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											4
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="ti-arrow-right"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<p class="text-small">
+								Fancy larger or smaller pagination? Add <code>.pagination-lg</code> or <code>.pagination-sm</code> for additional sizes.
+							</p>
+							<div>
+								<ul class="pagination pagination-lg margin-bottom-10">
+									<li>
+										<a href="#">
+											<i class="ti-arrow-left"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											1
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											2
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											3
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="ti-arrow-right"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<ul class="pagination pagination-sm margin-bottom-10">
+									<li>
+										<a href="#">
+											<i class="ti-arrow-left"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											1
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											2
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											3
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											4
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="ti-arrow-right"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Colorful
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								Use any of the available button classes to quickly create a styled pagination.
+							</p>
+							<div>
+								<ul class="pagination pagination-blue margin-bottom-10">
+									<li class="disabled">
+										<a href="#"><i class="ti-angle-left"></i></a>
+									</li>
+									<li class="active">
+										<a href="#">
+											1
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											2
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											3
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											4
+										</a>
+									</li>
+									<li>
+										<a href="#"><i class="ti-angle-right"></i></a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<ul class="pagination pagination-green margin-bottom-10">
+									<li class="disabled">
+										<a href="#"><i class="ti-angle-left"></i></a>
+									</li>
+									<li class="active">
+										<a href="#">
+											1
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											2
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											3
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											4
+										</a>
+									</li>
+									<li>
+										<a href="#"><i class="ti-angle-right"></i></a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<ul class="pagination pagination-red margin-bottom-10">
+									<li class="disabled">
+										<a href="#"><i class="ti-angle-left"></i></a>
+									</li>
+									<li class="active">
+										<a href="#">
+											1
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											2
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											3
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											4
+										</a>
+									</li>
+									<li>
+										<a href="#"><i class="ti-angle-right"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /// controller:  'PaginationDemoCtrl' -  localtion: assets/js/controllers/bootstrapCtrl.js /// -->
+			<div ng-controller="PaginationDemoCtrl">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Dynamic Pagination
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									A lightweight pagination directive that is focused on ... providing pagination & will take care of visualising a pagination bar and enable / disable buttons correctly!
+								</p>
+								<div class="row">
+									<div class="col-sm-6">
+										<p>
+											<h5>Default</h5>
+										</p>
+										<div>
+											<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+										</div>
+										<div>
+											<pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+										</div>
+										<div>
+											<pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
+										</div>
+										<div>
+											<pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages"></pagination>
+										</div>
+										<div class="well">
+											The selected page no: {{currentPage}}
+										</div>
+										<button class="btn btn-primary btn-o" ng-click="setPage(3)">
+											Set current page to: 3
+										</button>
+									</div>
+									<div class="col-sm-6">
+										<p>
+											<h5>Pager</h5>
+										</p>
+										<pager total-items="totalItems" ng-model="currentPage"></pager>
+										<p>
+											<h5>Limit the maximum visible buttons</h5>
+										</p>
+										<div>
+											<pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true"></pagination>
+										</div>
+										<div>
+											<pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+										</div>
+										<div class="well">
+											Page: {{bigCurrentPage}} / {{numPages}}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PAGINATION -->
+<!-- start: LABELS AND BADGES -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title">Labels and <span class="text-bold">Badges</span></h5>
+			<p>
+				Using Twitter Bootstrap, you may create inline labels, i.e. Label and annotate text and badges, i.e. indicators and unread counts.
+			</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-white">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Available labels
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								Add any of the below mentioned modifier classes to change the appearance of a label.
+							</p>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Labels</th>
+										<th>Class</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><span class="label label-default"> Default</span></td>
+										<td><code> label label-default </code></td>
+									</tr>
+									<tr>
+										<td><span class="label label-success"> Success</span></td>
+										<td><code> label label-success </code></td>
+									</tr>
+									<tr>
+										<td><span class="label label-warning"> Warning</span></td>
+										<td><code> label label-warning; </code></td>
+									</tr>
+									<tr>
+										<td><span class="label label-danger"> Danger</span></td>
+										<td><code> label label-danger </code></td>
+									</tr>
+									<tr>
+										<td><span class="label label-info"> Info</span></td>
+										<td><code> label label-info </code></td>
+									</tr>
+									<tr>
+										<td><span class="label label-inverse"> Inverse</span></td>
+										<td><code> label label-inverse </code></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-white">
+						<div class="panel-heading">
+							<div class="panel-title">
+								Available badges
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-small">
+								Easily highlight new or unread items by adding a <code>&lt;span class="badge"&gt;</code> to links, Bootstrap navs, and more.
+							</p>
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="hidden-xs">Name</th>
+										<th>Example</th>
+										<th>Class</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="hidden-xs"> Default </td>
+										<td><span class="badge"> 1</span></td>
+										<td><code> badge badge-default </code></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs"> Success </td>
+										<td><span class="badge badge-success"> 2</span></td>
+										<td><code> badge badge-success </code></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs"> Warning </td>
+										<td><span class="badge badge-warning"> 4</span></td>
+										<td><code> badge badge-warning </code></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs"> Danger </td>
+										<td><span class="badge badge-danger"> 6</span></td>
+										<td><code> badge badge-danger </code></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs"> Info </td>
+										<td><span class="badge badge-info"> 8</span></td>
+										<td><code> badge badge-info </code></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs"> Inverse </td>
+										<td><span class="badge badge-inverse"> 10</span></td>
+										<td><code> badge badge-inverse </code></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: LABELS AND BADGES -->
+<!-- start: RATING -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Rating</span></h5>
+			<p>
+				Rating directive that will take care of visualising a star rating bar.
+			</p>
+			<!-- /// controller:  'RatingDemoCtrl' -  localtion: assets/js/controllers/bootstrapCtrl.js /// -->
+			<div ng-controller="RatingDemoCtrl">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Default
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									Four options are available: top, right, bottom, and left aligned.
+								</p>
+								<div class="margin-bottom-15 text-extra-large">
+									<rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+								</div>
+								<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+								<div class="well">
+									Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b>
+								</div>
+								<button class="btn btn-primary" ng-click="rate = 0" ng-disabled="isReadonly">
+									Clear
+								</button>
+								<button class="btn btn-default" ng-click="isReadonly = ! isReadonly">
+									Toggle Readonly
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Custom icons
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="text-small">
+									Four options are available: top, right, bottom, and left aligned.
+								</p>
+								<div ng-init="x = 3" class="margin-bottom-30">
+									<rating ng-model="x" max="5" state-on="'fa fa-star text-yellow text-extra-large margin-right-5'" state-off="'fa fa-star-o text-large margin-right-5'"></rating>
+									<b>(<i>Rate:</i> {{x}})</b>
+								</div>
+								<div ng-init="h = 7">
+									<rating ng-model="h" max="10" state-on="'fa fa-heart text-red text-extra-large margin-right-5'" state-off="'fa fa-heart-o text-large margin-right-5'"></rating>
+									<b>(<i>Love:</i> {{h}})</b>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: RATING -->

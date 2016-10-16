@@ -1,0 +1,224 @@
+{
+  "dashboard": {
+    "WELCOME": "Welcome to {{appName}}"
+  },
+  "topbar": {
+    "messages": {
+    	"MAIN": "Messages",
+      	"HEADER": "未读消息",
+      	"SEEALL": "查看全部"
+    },
+    
+    "activities": {
+      "MAIN": "Activities",
+      "HEADER": "您有新通知",
+      "SEEALL": "查看全部"
+    },
+    "user": {
+      "PROFILE": "个人信息",
+      "CALENDAR" : "日历",
+      "MESSAGES" : "消息",
+      "LOCKSCREEN" : "锁屏",
+      "LOGOUT" : "注销"
+    }
+  },
+  "offsidebar": {
+    "chat": {
+      "ONLINE": "在线",
+      "OFFLINE": "离线",
+      "BACK": "返回",
+      "SEND" : "发送",
+      "PLACEHOLDER": "Message"
+    },
+    "favorites": {
+      "MAIN": "Favorites"
+    },
+    "settings": {
+      "MAIN": "普通设置",
+      "NOTIFICATIONS": "打开通知",
+      "SHOWEMAIL": "显示邮件",
+      "SHOWUSERS": "显示离线用户",
+      "EMAILALERT": "E-mail Alerts",
+      "SMSALERT": "SMS Alerts",
+      "SAVE" : "保存"     
+    }  
+  },
+  "sidebar": {
+    "heading": {
+      "NAVIGATION": "主菜单",
+      "FEATURES": "Core Features",
+      "DOCUMENTATION": "文档"
+    },
+    "search": {
+      "PLACEHOLDER": "搜索..."
+    },
+    "nav": {
+      "dashboard": {
+      	"MAIN": "控制面板"
+      },
+      "element": {
+      	"MAIN": "UI元素",
+        "ELEMENTS": "页面元素",
+        "BUTTONS": "按钮",
+        "LINKS": "Link Effects",
+        "FONTAWESOME" : "字体图标",
+        "LINEARICONS" : "Linear Icons",
+        "MODALS" : "模态框",
+        "TOGGLE" : "Toggle",
+        "TABS" : "Tabs & Accordions",
+        "PANELS" : "面板",
+        "NOTIFICATIONS": "通知",
+        "SLIDERS": "Sliders",
+        "TREEVIEW": "TreeView",
+        "MEDIA": "多媒体",
+        "NESTABLE": "Nestable List",
+        "TYPOGRAPHY": "拓扑"
+      },
+      "tables": {
+        "MAIN": "表格",
+        "BASIC": "基础表格",
+        "RESPONSIVE": "Responsive Tables",
+        "DATA": "ngTable"
+      },
+      "forms": {
+        "MAIN": "表单",
+        "ELEMENTS": "表单元素",
+        "XEDITABLE": "X-Editable Elements",
+        "TEXTEDITOR": "文本编辑器",
+        "WIZARD": "Form Wizard",
+        "VALIDATION": "表单验证",
+        "CROPPING": "Image Cropping",
+        "UPLOAD": "Multiple File Upload"
+      },
+      "login": {
+        "MAIN": "登录",
+        "LOGIN": "Login Form",
+        "REGISTRATION": "Registration Form",
+        "FORGOT": "Forgot Password Form",
+        "LOCKSCREEN": "锁屏"
+      },
+      "pages": {
+        "MAIN": "Pages",
+        "USERPROFILE": "User Profile",
+        "INVOICE": "Invoice",
+        "TIMELINE": "Timeline",
+        "CALENDAR": "Calendar",
+        "MESSAGES": "Messages",
+        "BLANKPAGE": "Starter Page"
+      },
+      "utilities": {
+        "MAIN": "工具",
+        "SEARCHRESULT": "Search Results",
+        "ERROR404": "404页面",
+        "ERROR500": "500页面",
+        "PRICING": "Pricing Table"
+      },
+      "3level": {
+        "MAIN": "3 Level Menu",
+        "Item1": {
+        	"MAIN": "Item 1",
+        	"LINK1" : "Sample Link 1",
+        	"LINK2" : "Sample Link 2",
+        	"LINK3" : "Sample Link 3"
+        },
+        "Item2": {
+        	"MAIN": "Item 2",
+        	"LINK1" : "Sample Link 1",
+        	"LINK2" : "Sample Link 2",
+        	"LINK3" : "Sample Link 3"
+        },
+        "Item3": {
+        	"MAIN": "Item 3",
+        	"LINK1" : "Sample Link 1",
+        	"LINK2" : "Sample Link 2",
+        	"LINK3" : "Sample Link 3"
+        }
+      },
+      "4level": {
+        "MAIN": "4 Level Menu",
+        "Item1": {
+        	"MAIN": "Item 1",
+        	"link1" : {
+        		"MAIN": "Sample Link 1",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"         		
+        	},
+        	"link2" : {
+        		"MAIN": "Sample Link 2",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"        		
+        	},
+        	"link3" : {
+        		"MAIN": "Sample Link 3",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"       		
+        	}        	
+        },
+        "Item2": {
+        	"MAIN": "Item 2",
+        	"link1" : {
+        		"MAIN": "Sample Link 1",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"        		
+        	},
+        	"link2" : {
+        		"MAIN": "Sample Link 2",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"        		
+        	},
+        	"link3" : {
+        		"MAIN": "Sample Link 3",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"         		
+        	}        	
+        },
+        "Item3": {
+        	"MAIN": "Item 3",
+        	"link1" : {
+        		"MAIN": "Sample Link 1",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"        		
+        	},
+        	"link2" : {
+        		"MAIN": "Sample Link 2",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"        		
+        	},
+        	"link3" : {
+        		"MAIN": "Sample Link 3",
+        		"LINK1" : "Link 1",
+        		"LINK2" : "Link 2",
+        		"LINK3" : "Link 3"        		
+        	}        	
+        }
+      },
+      "maps": {
+        "MAIN": "地图"
+      },
+      "charts": {
+        "MAIN": "图表"
+      }
+    }
+  },
+  "footer": {
+    "copyright": {
+    	"MAIN": "Copyright",
+      	"MESSAGE": "All rights reserved"
+    }
+  },
+  "setting": {
+  	"MAIN" : "样式选择器",
+    "FIXEDHEADER": "Fixed header",
+    "FIXEDSIDEBAR": "Fixed sidebar",
+    "CLOSEDSIDEBAR": "Closed sidebar",
+    "FIXEDFOOTER": "Fixed footer"
+  }
+}

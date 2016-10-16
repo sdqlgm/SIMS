@@ -1,0 +1,71 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{startDate}}</h3>
+</div>
+<div class="modal-body">
+	<div class="form-group">
+		<label>
+			Title
+		</label>
+		<input type="datetime" placeholder="Enter title" class="form-control underline text-large" ng-model="event.title" >
+	</div>
+	<div class="form-group">
+		<label class="block">
+			All Day
+		</label>
+		<input ng-model="event.allDay" type="checkbox" class="js-switch" ui-switch />
+	</div>
+	<div class="form-group">
+		<label>
+			Start
+		</label>
+		<span class="input-icon">
+			<input type="text" class="form-control underline" ng-click="startOpen = !startOpen" datepicker-popup="shortDate" ng-model="event.start" is-open="startOpen" ng-init="startOpen = false" max-date="event.end" close-text="Close" />
+			<i class="ti-calendar"></i> </span>
+		<timepicker ng-model="event.start" show-meridian="true" ng-show="!event.allDay"></timepicker>
+	</div>
+	<div class="form-group">
+		<label>
+			End
+		</label>
+		<span class="input-icon">
+			<input type="text" class="form-control underline" ng-click="endOpen = !endOpen" datepicker-popup="shortDate" ng-model="event.end" is-open="endOpen" ng-init="endOpen = false" min-date="event.start" close-text="Close" />
+			<i class="ti-calendar"></i> </span>
+		<timepicker ng-model="event.end" show-meridian="true" ng-show="!event.allDay"></timepicker>
+	</div>
+	<div class="form-group">
+		<label>
+			Category
+		</label>
+		<div class="radio">
+						<label class="clip-check">
+							<input type="radio" value="" name="optionsRadios2">
+							<i></i>
+							Radio Button 1
+						</label>
+					</div>
+					<div class="radio">
+						<label class="clip-check">
+							<input type="radio" value="" name="optionsRadios2">
+							<i></i>
+							Radio Button 2
+						</label>
+					</div>
+					<div class="radio">
+						<label class="clip-check">
+							<input type="radio" value="" name="optionsRadios2">
+							<i></i>
+							Radio Button 3
+						</label>
+					</div>
+	</div>
+</div>
+</div>
+<div class="modal-footer">
+	<a class="close" ng-click="remove(eventIndex)"><i class="ti-close"></i></a>
+	<button class="btn btn-primary" ng-click="saveEvent($event, event, 'myCalendar1')">
+		OK
+	</button>
+	<button class="btn btn-primary" ng-click="cancel($event)">
+		Cancel
+	</button>
+</div>
