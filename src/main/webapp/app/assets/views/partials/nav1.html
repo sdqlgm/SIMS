@@ -1,0 +1,133 @@
+<!-- start: SEARCH FORM -->
+<!-- <div class="search-form">
+	<a class="s-open" href="#">
+		<i class="ti-search"></i>
+	</a>
+	<form class="navbar-form" role="search">
+		<a class="s-remove" href="#" ng-toggle-class="search-open" target=".navbar-form">
+			<i class="ti-close"></i>
+		</a>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="{{ 'sidebar.search.PLACEHOLDER' | translate }}">
+			<button class="btn search-button" type="submit">
+				<i class="ti-search"></i>
+			</button>
+		</div>
+	</form>
+</div> -->
+<!-- end: SEARCH FORM -->
+<!-- start: MAIN NAVIGATION MENU -->
+<!-- <div class="navbar-title">
+	<span translate="sidebar.heading.NAVIGATION">主菜单</span>
+</div> -->
+<ul class="main-navigation-menu">
+	<!-- start: 资产管理 -->
+	<li ng-class="{'active open':$state.includes('app.assetManagement')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="fa fa-file-text-o"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title"> 计算机与信息科学学院 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+	</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.studentManage"> <span class="title">
+						14计科2班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.baseStationManage"> <span
+					class="title"> 15计科1班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.readerManage"> <span class="title">
+						14软件工程2班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.antennaManage"> <span class="title">
+						16信息管理1班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.antennaManage"> <span class="title">
+						15计算机师范2班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.antennaManage"> <span class="title">
+						14网络工程1班 </span>
+			</a></li>
+		</ul>
+	</li>
+	<!-- end: 资产管理 -->
+	<!-- start: 系统设置 -->
+	<li ng-class="{'active open':$state.includes('app.systemConfig')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="fa fa-gear"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title"> 经济管理学院 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+	</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active"><a
+				ui-sref="app.assetManagement.roadManage"> <span class="title">
+						14会计学1班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a
+				ui-sref="app.systemConfig.baseStationManageType"> <span
+					class="title"> 15旅游管理2班 </span>
+			</a></li>
+		</ul>
+	</li>
+	<!-- end: 系统设置 -->
+	<!-- start:地图 -->
+	<li ng-class="{'active open':$state.includes('app.gisInfo')}"><a
+		href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="fa fa-map-marker" style="margin-left: 2px;"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title"> 文学院 </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+	</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active"><a ui-sref="app.gisInfo.map"> <span
+					class="title"> 14汉语言文学1班 </span>
+			</a></li>
+		</ul></li>
+	<!-- end:地图 -->
+
+	<!-- start: 时间 -->
+	<li ng-class="{'active open':$state.includes('app.demo')}"><a
+		href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="fa fa-code"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title"> 文化与社会发展学院</span><i class="icon-arrow"></i>
+				</div>
+			</div>
+	</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active"><a ui-sref="app.demo.dateTime">
+					<span class="title"> 15公共关系学1班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a ui-sref="app.demo.modal"> <span
+					class="title"> 15文化产业管理2班 </span>
+			</a></li>
+			<li ui-sref-active="active"><a ui-sref="app.demo.notification">
+					<span class="title"> 15文化产业管理1班 </span>
+			</a></li>
+		</ul></li>
+	<!-- end: demo -->
+
+</ul>
+<!-- end: MAIN NAVIGATION MENU -->

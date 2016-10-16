@@ -1,0 +1,54 @@
+.sims_input_label {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #2cbd69;
+	background-color: #F7F7F7;
+	color: #2cbd69;
+}
+
+.sims_input {
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #2cbd69 !important;
+}
+
+ .sims_splitLine {
+ 	height:1px;
+ 	width:100%;
+ 	background:#33a362;
+ 	overflow:hidden;
+ 	margin-bottom: 15px;
+ }
+ 
+/* .sims_table tr:nth-child(odd) {
+ background-color: #ffffff;
+}
+.sims_table tr:nth-child(even) {
+ background-color: #2cdb69;
+} */
+ 
+ .cs-skin-slide>span::after {
+ 	/* color: #33a362; */
+ }
+
+/* bootstarp-modal引用select2专用*/
+body> .select2-container {
+	z-index:99999;
+}
+
+.sims_span{
+	font-size: 14px;
+	/* color: #2cdb69; */
+}
+.sims_input_add{
+	width:70%;
+	border-radius:4px;
+}
+.sims_input_update{
+	width:65%;
+	border-radius:4px;
+}
+/* .dropdown-menu.dropdown-dark {
+	background-color: #00BDCC;
+    border: 1px solid #039EAB;
+} */

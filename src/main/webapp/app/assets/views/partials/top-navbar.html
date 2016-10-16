@@ -1,0 +1,162 @@
+<!-- start: TOP NAVBAR -->
+<!-- start: NAVBAR HEADER -->
+<!-- <div class="navbar-header" style="text-align: center; padding-top: 16px;border-right: 0;">
+	<img src="../app/assets/images/eri1.png"/>
+</div> -->
+<!-- end: NAVBAR HEADER -->
+<!-- start: NAVBAR COLLAPSE -->
+<div class="navbar-collapse collapse" collapse="navbarCollapsed" ng-init="navbarCollapsed = true" off-click="navbarCollapsed = true" off-click-if='!navbarCollapsed' off-click-filter="#menu-toggler" 
+	style="margin-left: 0px;">
+	<div class="col-md-8" style="margin-top: 13px;">
+		<img style="margin-top: -16px; margin-left: -14px;" src="../app/assets/images/logo.png"/>
+		<span style="font-size: 28px;margin-left: 20px;">学生信息管理系统</span>
+	</div>
+	<div class="col-md-2 col-md-offset-2"> 
+	<ul class="nav navbar-right" style="margin-right: -40px;" ct-fullheight="window" data-ct-fullheight-exclusion="header" data-ct-fullheight-if="isSmallDevice">
+		<!-- start: MESSAGES DROPDOWN -->
+		<!-- <li class="dropdown" dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" dropdown-toggle>
+				<span class="dot-badge partition-red"></span> <i class="ti-comment"></i> <span translate="topbar.messages.MAIN">MESSAGES</span>
+			</a>
+			<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+				<li>
+					<span class="dropdown-header" translate="topbar.messages.HEADER"> Unread messages</span>
+				</li>
+				<li>
+					<div class="drop-down-wrapper ps-container">
+						<ul>
+							<li class="unread">
+								<a href="javascript:;" class="unread">
+									<div class="clearfix">
+										<div class="thread-image">
+											<img src="./assets/images/avatar-2.jpg" alt="">
+										</div>
+										<div class="thread-content">
+											<span class="author">Nicole Bell</span>
+											<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
+											<span class="time"> Just Now</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="unread">
+									<div class="clearfix">
+										<div class="thread-image">
+											<img src="./assets/images/avatar-3.jpg" alt="">
+										</div>
+										<div class="thread-content">
+											<span class="author">Steven Thompson</span>
+											<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
+											<span class="time">8 hrs</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="clearfix">
+										<div class="thread-image">
+											<img src="./assets/images/avatar-5.jpg" alt="">
+										</div>
+										<div class="thread-content">
+											<span class="author">Kenneth Ross</span>
+											<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
+											<span class="time">14 hrs</span>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="view-all">
+					<a href="#" translate="topbar.messages.SEEALL">
+						See All
+					</a>
+				</li>
+			</ul>
+		</li>
+		end: MESSAGES DROPDOWN
+		start: ACTIVITIES DROPDOWN
+		<li class="dropdown" dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" dropdown-toggle>
+				<i class="ti-check-box"></i> <span translate="topbar.activities.MAIN">ACTIVITIES</span>
+			</a>
+			<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+				<li>
+					<span class="dropdown-header" translate="topbar.activities.HEADER"> 您有新通知</span>
+				</li>
+				<li>
+					<div class="drop-down-wrapper ps-container">
+						<div class="list-group no-margin">
+							<a class="media list-group-item" href="">
+								<img class="img-circle" alt="..." src="assets/images/avatar-1.jpg">
+								<span class="media-body block no-margin"> Use awesome animate.css <small class="block text-grey">10 minutes ago</small> </span>
+							</a>
+							<a class="media list-group-item" href="">
+								<span class="media-body block no-margin"> 1.0 initial released <small class="block text-grey">1 hour ago</small> </span>
+							</a>
+						</div>
+					</div>
+				</li>
+				<li class="view-all">
+					<a href="#" translate="topbar.activities.SEEALL">
+						See All
+					</a>
+				</li>
+			</ul>
+		</li>
+		end: ACTIVITIES DROPDOWN
+		start: LANGUAGE SWITCHER
+		<li class="dropdown" dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" dropdown-toggle>
+				<i class="ti-world"></i> {{language.selected}}
+			</a>
+			<ul role="menu" class="dropdown-menu dropdown-light fadeInUpShort">
+				<li ng-repeat="(localeId, langName) in language.available">
+					<a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler">
+						{{langName}}
+					</a>
+				</li>
+			</ul>
+		</li> -->
+		<!-- start: LANGUAGE SWITCHER -->
+		<!-- start: USER OPTIONS DROPDOWN -->
+		<!-- <li class="dropdown current-user" dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" dropdown-toggle>
+				<img src="assets/images/avatar-1.jpg" alt="{{user.name}}"> <span class="username">{{user.name}} <i class="ti-angle-down"></i></i></span>
+			</a>
+			<ul class="dropdown-menu dropdown-dark">
+				<li>
+					<a ui-sref="app.pages.user">
+						个人信息
+					</a>
+				</li>
+				<li>
+					<a ui-sref="login.lockscreen">
+						锁屏
+					</a>
+				</li>
+				<li>
+					<a ui-sref="login.signin" translate="topbar.user.LOGOUT">
+						登出
+					</a>
+				</li>
+			</ul>
+		</li> -->
+		<!-- end: USER OPTIONS DROPDOWN -->
+	</ul>
+	<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+	<div class="close-handle visible-xs-block menu-toggler" ng-click="navbarCollapsed = true">
+		<div class="arrow-left"></div>
+		<div class="arrow-right"></div>
+	</div>
+	</div>
+	<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+</div>
+<!-- <a class="dropdown-off-sidebar" ng-click="toggle('off-sidebar')">
+	&nbsp;
+</a> -->
+<!-- end: NAVBAR COLLAPSE -->
+<!-- start: TOP NAVBAR -->

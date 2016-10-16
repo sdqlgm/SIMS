@@ -1,0 +1,67 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle">{{ mainTitle }}</h1>
+			<span class="mainDescription">A small box that appears on the display screen to give you information or to warn you about a potentially damaging operation. <small class="block">Webopedia - Online Tech Dictionary for IT Professionals</small></span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: SWEETALERT -->
+<div class="container-fluid container-fullw bg-white">
+	<!-- /// controller:  'SweetAlertCtrl' -  localtion: assets/js/controllers/sweetAlertCtrl.js /// -->
+	<div ng-controller="demoNotificationCtrl">
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="over-title margin-bottom-15"><span class="text-bold">ngSweetAlert</span></h5>
+				<p>
+					AngularJS wrapper for SweetAlert. Sweet Alert is a beautiful replacement for Javascript's "Alert".
+				</p>
+				<div class="row">
+					<div class="col-lg-4 col-sm-6">
+						<div class="panel panel-transparent min-height-200">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Success message
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="margin-bottom-30">
+									Shows the user a message to warn him that a certain operation is successful.
+								</p>
+								<button class="btn btn-primary pull-right" ng-click="demo3();">
+									Open Message
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<div class="panel panel-transparent min-height-200">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Another warning message
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="margin-bottom-30">
+									By passing a parameter to warning message, you can execute something else for "Cancel".
+								</p>
+								<button class="btn btn-primary pull-right" ng-click="demo5();">
+									Open Message
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+					map is:
+						<div id="testMap" class="panel panel-transparent min-height-200">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: SWEETALERT -->

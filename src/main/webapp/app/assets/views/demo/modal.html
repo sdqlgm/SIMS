@@ -1,0 +1,45 @@
+<div class="container-fluid container-fullw bg-white">
+	<!-- /// controller:  'ModalDemoCtrl' -  localtion: assets/js/controllers/bootstrapCtrl.js /// -->
+	<div ng-controller="modalDemoCtrl">
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="over-title margin-bottom-15">UI Bootstrap <span class="text-bold">Modals</span></h5>
+				<p>
+					$modal is a service to quickly create AngularJS-powered modal windows. Creating custom modals is straightforward: create a partial view, its controller and reference them when using the service.
+				</p>
+				<div class="row">
+					<div class="col-lg-4 col-sm-6">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								<div class="panel-title">
+									Default Modal
+								</div>
+							</div>
+							<div class="panel-body">
+								<p class="margin-bottom-30">
+									Toggle a modal by clicking the button below. It will slide down and fade in from the top of the page.
+								</p>
+								<button class="btn btn-primary btn-o pull-right" ng-click="open()">
+									Open Deafult Modal
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<span class="sims_span">
+							资产编号 :
+						</span>
+						<span style="padding-left: 10px;">
+		                    <select class="js-data-example-ajax" id="areaCode" style="width:70%;">
+								<option value="" selected="selected">全部</option>
+							</select>
+						</span>
+					</div>
+				</div>
+				<div ng-show="selected" class="margin-top-15 text-small">
+					Selection from a modal: {{ selected }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

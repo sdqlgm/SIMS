@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 学院信息Mapper -->
+<mapper namespace="com.dsg.sims.mapper.SchoolMapper">
+	<!-- 添加学院信息 -->
+	<insert id="addSchool" parameterType="com.dsg.sims.model.School">
+		INSERT INTO SCHOOL (
+		SCHOOL_ID,
+		NAME
+		)
+		VALUES
+		(
+		#{schoolId},
+		#{name}
+		)
+	</insert>
+
+	<!-- 删除学院信息 -->
+	<delete id="delSchool">
+		DELETE FROM SCHOOL
+		WHERE
+		SCHOOL_ID = #{schoolId}
+	</delete>
+
+	<!-- 更新学院信息 -->
+	<update id="updateSchool" parameterType="com.dsg.sims.model.School">
+		UPDATE SCHOOL
+		SET
+		SCHOOL_ID = #{schoolId},
+		NAME =#{name}
+		WHERE
+		SCHOOL_ID = #{schoolId}
+	</update>
+
+	<!-- 根据学院ID查询学院信息 -->
+	<select id="querySchoolById" resultType='com.dsg.sims.model.School'>
+		select * from
+		SCHOOL
+		WHERE SCHOOL_ID = #{schoolId}
+	</select>
+
+	<!-- 带参数询所有 -->
+	<select id="querySchool" parameterType="com.dsg.sims.model.param.QueryConditionData"
+		resultType='com.dsg.sims.model.School'>
+		select * from SCHOOL
+		WHERE 1=1
+		<if
+			test=" queryConditionData.schoolId != null and queryConditionData.schoolId != '' ">
+			AND SCHOOL_ID = #{queryConditionData.schoolId}
+		</if>
+		<if
+			test=" queryConditionData.name != null and queryConditionData.name != '' ">
+			AND NAME = #{queryConditionData.name}
+		</if>
+	</select>
+
+
+	<!-- 查询学院数量 -->
+	<select id="querySchoolCount" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM
+		SCHOOL
+	</select>
+	
+	<select id="query" resultType='com.dsg.sims.model.School'>
+		SELECT * FROM
+		SCHOOL
+	</select>
+
+</mapper>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 学生信息Mapper -->
+<mapper namespace="com.dsg.sims.mapper.StudentMapper">
+	<!-- 添加学生信息 -->
+	<insert id="addStudent" parameterType="com.dsg.sims.model.Student">
+		INSERT INTO student (
+		STUDENT_ID,
+		NAME,
+		SEX,
+		BIRTHDAY,
+		CITIZEN_ID,
+		ADDRESS,
+		POLITICAL_STATUS,
+		GRADE,
+		CLASSES_ID,
+		SCHOOL_ID
+		)
+		VALUES
+		(
+		#{studentId},
+		#{name},
+		#{sex},
+		#{birthday},
+		#{citizenId},
+		#{address},
+		#{politicalStatus},
+		#{grade},
+		#{classesId},
+		#{schoolId}
+		)
+	</insert>
+
+	<!-- 删除学生信息 -->
+	<delete id="delStudent">
+		DELETE FROM student
+		WHERE
+		STUDENT_ID = #{studentId}
+	</delete>
+
+	<!-- 更新学生信息 -->
+	<update id="updateStudent" parameterType="com.dsg.sims.model.Student">
+	UPDATE student SET
+	NAME= #{name},
+	SEX = #{sex},
+	BIRTHDAY = #{birthday},
+	CITIZEN_ID =#{citizenId},
+	ADDRESS = #{address},
+	POLITICAL_STATUS =#{politicalStatus},
+	GRADE = #{grade},
+	CLASSES_ID = #{classesId},
+	SCHOOL_ID =#{schoolId}
+	WHERE STUDENT_ID = #{studentId}
+	</update>
+
+	<!-- 根据学生ID查询学生信息 -->
+	<select id="queryStudentById" resultType='com.dsg.sims.model.Student'>
+		select * from
+		student
+		WHERE STUDENT_ID = #{studentId}
+	</select>
+
+	<!-- 带参数询所有 -->
+	<select id="queryStudent" parameterType="com.dsg.sims.model.param.QueryConditionData" resultType='com.dsg.sims.model.Student'>
+		select * from student
+		WHERE 1=1
+			<if test=" queryConditionData.studentId != null and queryConditionData.studentId != '' ">
+				AND STUDENT_ID = #{queryConditionData.studentId}
+			</if>
+			<if test=" queryConditionData.name != null and queryConditionData.name != '' ">
+				AND NAME = #{queryConditionData.name}
+			</if>
+			<if test=" queryConditionData.sex != null and queryConditionData.sex != '' ">
+				AND SEX = #{queryConditionData.sex}
+			</if>
+			<if test=" queryConditionData.birthday != null and queryConditionData.birthday != '' ">
+				AND BIRTHDAY = #{queryConditionData.birthday}
+			</if>
+			<if test=" queryConditionData.citizenId != null and queryConditionData.citizenId != '' ">
+				AND CITIZEN_ID  = #{queryConditionData.citizenId}
+			</if>
+			<if test=" queryConditionData.address != null and queryConditionData.address != '' ">
+				AND ADDRESS = #{queryConditionData.address}
+			</if>
+			<if test=" queryConditionData.politicalStatus != null and queryConditionData.politicalStatus != '' ">
+				AND POLITICAL_STATUS = #{queryConditionData.politicalStatus}
+			</if>
+			<if test=" queryConditionData.grade != null and queryConditionData.grade != '' ">
+				AND GRADE  = #{queryConditionData.grade}
+			</if>
+			<if test=" queryConditionData.classesId != null and queryConditionData.classesId != '' ">
+				AND CLASSES_ID  = #{queryConditionData.classesId}
+			</if>
+			<if test=" queryConditionData.schoolId != null and queryConditionData.schoolId != '' ">
+				AND SCHOOL_ID = #{queryConditionData.schoolId}
+			</if>
+			<if test=" queryConditionData.startTime != null and queryConditionData.startTime != '' ">
+				AND TO_DAYS(BIRTHDAY) &gt;= TO_DAYS(#{queryConditionData.startTime})
+			</if>
+			<if test=" queryConditionData.endTime != null and queryConditionData.endTime != '' ">
+				AND TO_DAYS(BIRTHDAY) &lt;= TO_DAYS(#{queryConditionData.endTime})
+			</if>
+	</select>
+	
+
+	<!-- 查询学生数量 -->
+	<select id="queryStudentCount" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM
+		student
+	</select>
+	
+	<!-- 模糊查询学生信息 -->
+	<select id="queryStudentParam" resultType='com.dsg.sims.model.Student' parameterType="com.dsg.sims.model.param.QueryConditionData">
+		select * from
+		student
+		WHERE 1=1
+			<if test=" studentId != null and studentId != '' ">
+				AND STUDENT_ID LIKE CONCAT(CONCAT('%', #{studentId}),'%')
+			</if>
+			<if test=" name != null and name != '' ">
+				AND NAME LIKE CONCAT(CONCAT('%', #{name}),'%')
+			</if>
+			<if test=" sex != null and sex != '' ">
+				AND SEX LIKE CONCAT(CONCAT('%', #{sex}),'%')
+			</if>
+			<if test=" birthday != null and birthday != '' ">
+				AND BIRTHDAY LIKE CONCAT(CONCAT('%', #{birthday}),'%')
+			</if>
+			<if test=" citizenId != null and citizenId != '' ">
+				AND CITIZEN_ID LIKE CONCAT(CONCAT('%', #{citizenId}),'%')
+			</if>
+			<if test=" address != null and address != '' ">
+				AND ADDRESS LIKE CONCAT(CONCAT('%', #{address}),'%')
+			</if>
+			<if test=" politicalStatus != null and politicalStatus != '' ">
+				AND POLITICAL_STATUS LIKE CONCAT(CONCAT('%', #{politicalStatus}),'%')
+			</if>
+			<if test=" grade != null and grade != '' ">
+				AND GRADE LIKE CONCAT(CONCAT('%', #{grade}),'%')
+			</if>
+			<if test=" classesId != null and classesId != '' ">
+				AND CLASSES_ID LIKE CONCAT(CONCAT('%', #{classesId}),'%')
+			</if>
+			<if test=" schoolId != null and schoolId != '' ">
+				AND SCHOOL_ID LIKE CONCAT(CONCAT('%', #{schoolId}),'%')
+			</if>
+			
+	</select>
+</mapper>

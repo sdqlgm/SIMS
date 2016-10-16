@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 天线信息Mapper -->
+<mapper namespace="com.dsg.sims.mapper.AntennaInfoMapper">
+
+	<!-- 添加天线信息 -->
+	<insert id="addAntennaInfo" parameterType="com.dsg.sims.model.AntennaInfo">
+		INSERT INTO DTP_ANTENNA_INFO (
+			ID,
+			READER_ID,
+			BASE_STATION_ID,
+			ANTENNA_NUMBER,
+			CUR_CONFIG_GROUP_KEY,
+			ROAD_ID,
+			LANE_ID,
+			STATE,
+			CREATE_USER,
+			CREATE_DATE,
+			MODIFY_USER,
+			MODIFY_DATE
+		)
+		VALUES (
+			#{Id,jdbcType=INTEGER},
+			#{readerId,jdbcType=INTEGER},
+			#{baseStationId,jdbcType=INTEGER},
+			#{antennaNumber,jdbcType=INTEGER},
+			#{curConfigGroupKey,jdbcType=VARCHAR},
+			#{roadId,jdbcType=INTEGER},
+			#{laneId,jdbcType=INTEGER},
+			#{state,jdbcType=INTEGER},
+			#{createUser,jdbcType=INTEGER},
+			#{createDate},
+			#{modifyUser,jdbcType=INTEGER},
+			#{modifyDate}
+		)
+	</insert>
+
+	<!-- 查询所有 -->
+	<select id="queryAntennaInfo" resultType='com.dsg.sims.model.AntennaInfo'>
+		select * from DTP_ANTENNA_INFO WHERE STATE = 0
+	</select>
+
+	<!-- 修改 -->
+	<update id="updateAntennaInfo" parameterType="com.dsg.sims.model.AntennaInfo">
+		UPDATE DTP_ANTENNA_INFO SET
+			READER_ID = #{readerId},
+			BASE_STATION_ID	= #{baseStationId},
+			ANTENNA_NUMBER = #{antennaNumber},
+			CUR_CONFIG_GROUP_KEY = #{curConfigGroupKey},
+			ROAD_ID = #{roadId},
+			LANE_ID = #{laneId},
+			STATE = #{state},
+			CREATE_USER = #{createUser},
+			CREATE_DATE = #{createDate},
+			MODIFY_USER	= #{modifyUser},
+			MODIFY_DATE	= #{modifyDate}
+		where ID = #{id}
+	</update>
+	
+	<!-- 根据ID删除天线信息 -->
+	<delete id="deleteAntennaInfoById">
+		DELETE FROM DTP_ANTENNA_INFO  WHERE ID = #{antennaId,jdbcType=INTEGER}
+	</delete>
+
+	<!-- 查询天线数量 -->
+	<select id="queryAntennaCount" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM DTP_ANTENNA_INFO
+	</select>
+
+</mapper>
