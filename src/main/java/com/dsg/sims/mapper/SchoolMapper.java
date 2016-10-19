@@ -2,6 +2,7 @@ package com.dsg.sims.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import com.dsg.sims.common.model.Page;
 import com.dsg.sims.model.School;
@@ -10,6 +11,7 @@ import com.dsg.sims.model.param.QueryConditionData;
  * 学院信息mapper
  * @author maxiaoding
  */
+@Repository
 public interface SchoolMapper {
 
 	boolean addSchool(School school);
