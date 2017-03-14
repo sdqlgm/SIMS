@@ -6,7 +6,7 @@
 <mapper namespace="com.dsg.sims.mapper.SchoolMapper">
 	<!-- 添加学院信息 -->
 	<insert id="addSchool" parameterType="com.dsg.sims.model.School">
-		INSERT INTO SCHOOL (
+		INSERT INTO school (
 		SCHOOL_ID,
 		NAME
 		)
@@ -19,14 +19,14 @@
 
 	<!-- 删除学院信息 -->
 	<delete id="delSchool">
-		DELETE FROM SCHOOL
+		DELETE FROM school
 		WHERE
 		SCHOOL_ID = #{schoolId}
 	</delete>
 
 	<!-- 更新学院信息 -->
 	<update id="updateSchool" parameterType="com.dsg.sims.model.School">
-		UPDATE SCHOOL
+		UPDATE school
 		SET
 		SCHOOL_ID = #{schoolId},
 		NAME =#{name}
@@ -37,14 +37,14 @@
 	<!-- 根据学院ID查询学院信息 -->
 	<select id="querySchoolById" resultType='com.dsg.sims.model.School'>
 		select * from
-		SCHOOL
+		school
 		WHERE SCHOOL_ID = #{schoolId}
 	</select>
 
 	<!-- 带参数询所有 -->
 	<select id="querySchool" parameterType="com.dsg.sims.model.param.QueryConditionData"
 		resultType='com.dsg.sims.model.School'>
-		select * from SCHOOL
+		select * from school
 		WHERE 1=1
 		<if
 			test=" queryConditionData.schoolId != null and queryConditionData.schoolId != '' ">
@@ -60,12 +60,12 @@
 	<!-- 查询学院数量 -->
 	<select id="querySchoolCount" resultType="java.lang.Integer">
 		SELECT COUNT(*) FROM
-		SCHOOL
+		school
 	</select>
 	
 	<select id="query" resultType='com.dsg.sims.model.School'>
 		SELECT * FROM
-		SCHOOL
+		school
 	</select>
 
 </mapper>

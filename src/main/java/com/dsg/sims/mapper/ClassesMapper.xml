@@ -6,7 +6,7 @@
 <mapper namespace="com.dsg.sims.mapper.ClassesMapper">
 	<!-- 添加班级信息 -->
 	<insert id="addClasses" parameterType="com.dsg.sims.model.Classes">
-		INSERT INTO CLASSES (
+		INSERT INTO classes (
 		CLASSES_ID,
 		NAME,
 		GRADE,
@@ -25,14 +25,14 @@
 
 	<!-- 删除班级信息 -->
 	<delete id="delClasses">
-		DELETE FROM CLASSES
+		DELETE FROM classes
 		WHERE
 		CLASSES_ID = #{classesId}
 	</delete>
 
 	<!-- 更新班级信息 -->
 	<update id="updateClasses" parameterType="com.dsg.sims.model.Classes">
-		UPDATE CLASSES
+		UPDATE classes
 		SET
 		NAME = #{name},
 		GRADE = #{grade},
@@ -45,14 +45,14 @@
 	<!-- 根据班级ID查询班级信息 -->
 	<select id="queryClassesById" resultType='com.dsg.sims.model.Classes'>
 		select * from
-		CLASSES
+		classes
 		WHERE CLASSES_ID = #{classesId}
 	</select>
 
 	<!-- 带参数询所有 -->
 	<select id="queryClasses" parameterType="com.dsg.sims.model.param.QueryConditionData"
 		resultType='com.dsg.sims.model.Classes'>
-		select * from CLASSES
+		select * from classes
 		WHERE 1=1
 		<if
 			test=" queryConditionData.classesId != null and queryConditionData.classesId != '' ">
@@ -68,12 +68,12 @@
 	<!-- 查询班级数量 -->
 	<select id="queryClassesCount" resultType="java.lang.Integer">
 		SELECT COUNT(*) FROM
-		CLASSES
+		classes
 	</select>
 	
 	<select id="queryBySchoolId" resultType='com.dsg.sims.model.Classes'>
 		select * from
-		CLASSES
+		classes
 		WHERE SCHOOL_ID = #{schoolId}
 	</select>
 

@@ -23,16 +23,16 @@
 	</profiles>
 
 	<!-- 添加镜像依赖 ，在maven的官方库里是没有CDH相关包的，所以只能配置CDH的官网下载地址来下载jar包 -->
-	<repositories>
-		<repository>
-			<id>cloudera</id>
-			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
-		</repository>
-		<repository>
-			<id>spring-repo</id>
-			<url>http://repo.springsource.org/libs-release-local</url>
-		</repository>
-	</repositories>
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>cloudera</id> -->
+<!-- 			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>spring-repo</id> -->
+<!-- 			<url>http://repo.springsource.org/libs-release-local</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
 
 	<properties>
 		<finalName>sims</finalName>
